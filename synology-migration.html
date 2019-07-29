@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from blog.lan/synology-migration by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Jul 2019 17:35:30 GMT -->
+<!-- Mirrored from blog.lan/synology-migration by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Jul 2019 20:48:48 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="utf-8" />
@@ -12,20 +12,20 @@
         <meta name="generator" content="GravCMS" />
     <meta name="description" content="Grav is an easy to use, yet powerful, open source flat-file CMS" />
 
-    <link rel="icon" type="image/png" href="http://blog.lan/user/themes/myblog/images/favicon.png" />
+    <link rel="icon" type="image/png" href="user/themes/myblog/images/favicon.png" />
     <link rel="canonical" href="synology-migration.html" />
 
                         
             
-    <link href="http://blog.lan/user/plugins/markdown-notices/assets/notices.css" type="text/css" rel="stylesheet">
-<link href="http://blog.lan/user/plugins/form/assets/form-styles.css" type="text/css" rel="stylesheet">
-<link href="http://blog.lan/user/plugins/login/css/login.css" type="text/css" rel="stylesheet">
-<link href="http://blog.lan/user/themes/myblog/css-compiled/spectre.min.css" type="text/css" rel="stylesheet">
-<link href="http://blog.lan/user/themes/myblog/css-compiled/theme.min.css" type="text/css" rel="stylesheet">
-<link href="http://blog.lan/user/themes/myblog/css/custom.css" type="text/css" rel="stylesheet">
-<link href="http://blog.lan/user/themes/myblog/css/line-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="user/plugins/markdown-notices/assets/notices.css" type="text/css" rel="stylesheet">
+<link href="user/plugins/form/assets/form-styles.css" type="text/css" rel="stylesheet">
+<link href="user/plugins/login/css/login.css" type="text/css" rel="stylesheet">
+<link href="user/themes/myblog/css-compiled/spectre.min.css" type="text/css" rel="stylesheet">
+<link href="user/themes/myblog/css-compiled/theme.min.css" type="text/css" rel="stylesheet">
+<link href="user/themes/myblog/css/custom.css" type="text/css" rel="stylesheet">
+<link href="user/themes/myblog/css/line-awesome.min.css" type="text/css" rel="stylesheet">
 
-    <script src="http://blog.lan/system/assets/jquery/jquery-2.x.min.js"></script>
+    <script src="system/assets/jquery/jquery-2.x.min.js"></script>
 
 </head>
 <body id="top" class=" header-fixed header-animated sticky-footer">
@@ -68,7 +68,7 @@
     <div class="e-content">
         <p>I've been very happy with my Synology NAS, a 4-bay DS411j which I've had for some seven years. But the ARM chipset has always been a little underpowered and with the latest DSM updates it's been really starting to show its age. I was finally spurred to upgrade when I read about the virtualisation features in the newer Intel based boxes. These are able to host VMs and Docker containers.</p>
 
-<p><img alt="" src="images/d/3/f/2/8/d3f28ff017dbc38516a4fb7d82b166dfe4a47940-screenshot20190703235157.html" /></p>
+<p><img alt="" src="images/d/3/f/2/8/d3f28ff017dbc38516a4fb7d82b166dfe4a47940-screenshot20190703235157.png" /></p>
 <p>So I ordered a DS218+. I moved the four identical 3TB drives to the 218 (two internal in RAID 1 and two external disks for the USB caddy to be rotated off-site periodically). I decided I could keep the DS411j in service for less important files (things that I'm not too bothered about losing such as movies and TV shows). I had some smaller drives from an old server lying around and filled up all four bays with these. This meant I could use the new box for just the much smaller set of files that are really important to me and my company and free up some space on the new box. </p>
 <p>The Synology migration tool is quite slick and the 218 was quickly in service with the transferred disks. There was one snag however - to use the VM app, the filesystem has to be BTRFS. There's no way to convert the filesystem in place. So it was doubly fortunate for me that I had spare disks for the old 411. I was able to run a second migration over the network from the 218 to the 411, then wipe the drives on the 218 and convert them to BTRFS. Finally I could run a last network migration from the 411 back to the 218 and I was good to go. A summary of the steps:</p>
 <ol>
@@ -420,11 +420,11 @@
         </div>
     </div>
 
-    <script src="http://blog.lan/user/themes/myblog/js/jquery.treemenu.js"></script>
-<script src="http://blog.lan/user/themes/myblog/js/site.js"></script>
+    <script src="user/themes/myblog/js/jquery.treemenu.js"></script>
+<script src="user/themes/myblog/js/site.js"></script>
 
 
 </body>
 
-<!-- Mirrored from blog.lan/synology-migration by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Jul 2019 17:35:30 GMT -->
+<!-- Mirrored from blog.lan/synology-migration by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Jul 2019 20:48:48 GMT -->
 </html>
