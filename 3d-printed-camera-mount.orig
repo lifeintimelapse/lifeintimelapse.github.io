@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>3d Printed Camera Mount | LiT</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="GravCMS" />
+    <meta name="description" content="Grav is an easy to use, yet powerful, open source flat-file CMS" />
+
+    <link rel="icon" type="image/png" href="http://blog.lan/user/themes/myblog/images/favicon.png" />
+    <link rel="canonical" href="http://blog.lan/3d-printed-camera-mount" />
+
+                        
+            
+    <link href="http://blog.lan/user/plugins/markdown-notices/assets/notices.css" type="text/css" rel="stylesheet">
+<link href="http://blog.lan/user/plugins/form/assets/form-styles.css" type="text/css" rel="stylesheet">
+<link href="http://blog.lan/user/plugins/login/css/login.css" type="text/css" rel="stylesheet">
+<link href="http://blog.lan/user/themes/myblog/css-compiled/spectre.min.css" type="text/css" rel="stylesheet">
+<link href="http://blog.lan/user/themes/myblog/css-compiled/theme.min.css" type="text/css" rel="stylesheet">
+<link href="http://blog.lan/user/themes/myblog/css/custom.css" type="text/css" rel="stylesheet">
+<link href="http://blog.lan/user/themes/myblog/css/line-awesome.min.css" type="text/css" rel="stylesheet">
+
+    <script src="http://blog.lan/system/assets/jquery/jquery-2.x.min.js"></script>
+
+</head>
+<body id="top" class=" header-fixed header-animated sticky-footer">
+    <div id="page-wrapper">
+            <section id="header" class="section">
+            <section class="container grid-lg">
+                <nav class="navbar">
+                    <section class="navbar-section logo">
+                                                <h3><a href="/" title="Home">Rob Smith | <b>Life in Timelapse</b></a></h3>
+                    </section>
+                    <section class="navbar-section desktop-menu">
+
+                                                                    </section>
+                </nav>
+            </section>
+        </section>
+            
+    
+        <section id="start">
+        <section id="body-wrapper" class="section blog-listing">
+    <section class="container grid-lg">
+
+        
+        
+<div class="columns">
+    <div id="item" class="column col-9 col-md-12 extra-spacing">
+                        <div class="content-item h-entry">
+
+    <div class="content-title text-center">
+            <h2 class="p-name mt-1"><a href="http://blog.lan/3d-printed-camera-mount" class="u-url">3d Printed Camera Mount</a></h2>
+                <span class="blog-date">
+    <time class="dt-published" datetime="2014-06-06T19:23:00+01:00">
+        <i class="fa fa-calendar"></i> 6th Jun 2014
+    </time>
+</span>
+        <span class="tags">
+        <a class="label label-rounded label-secondary p-category" href="http://blog.lan/tag:3dprinting#body-wrapper">3dprinting</a>
+        <a class="label label-rounded label-secondary p-category" href="http://blog.lan/tag:photography#body-wrapper">photography</a>
+    </span>
+    </div>
+    <div class="e-content">
+        <p>I've often been frustrated when I spot some interesting wildlife but can't get a decent photo. I have a telescope and tried digiscoping a while back - for this you buy an adapter that allows you to take photographs through your telescope with a cameraphone or point-and-shoot camera. The results were quite reasonable (I'm not looking to win a photography award, I just want a record of what I've seen). But the setup was too fiddly to be useful. </p>
+<p>In the end I decided to get a camera with a zoom that matched my scope. But this still left the problem of getting the camera quickly lined up on the object of interest. So I've 3d printed a tripod mount that allows me to keep the camera always out alongside the scope ready to shoot. The mount fits under and around the scope mount and keeps the camera aligned with a pin.</p>
+<p><img alt="" src="http://blog.lan/images/3/f/0/c/4/3f0c44d541eed3d3bfadb40cdd1c1d92fb777e60-stl.png" srcset="http://blog.lan/images/d/5/6/5/a/d565ab3b7cd125bb4e4727a0ec0c5dba325318ea-stl2x.png 857w, http://blog.lan/images/3/f/0/c/4/3f0c44d541eed3d3bfadb40cdd1c1d92fb777e60-stl.png 640w" sizes="100vw" /><img alt="" src="http://blog.lan/images/b/f/3/8/2/bf38260eb0f49d02dced462f10ca4557e38b47d7-20140627-130446.jpeg" srcset="http://blog.lan/images/9/5/a/6/6/95a66bbf837aa82967aea720ed544b46d1b7c467-20140627-1304462x.jpeg 1000w, http://blog.lan/images/4/9/8/5/7/49857169f15f08980c40c392590eda02d9bdd452-20140627-1304463x.jpeg 1500w, http://blog.lan/images/7/5/f/1/c/75f1c16f53a624c18719530c047fcc89d7d7bbc5-20140627-1304464x.jpeg 2500w, http://blog.lan/images/7/e/7/3/3/7e7330c683f31dc782e71a45854b0bd9aff977c3-20140627-1304465x.jpeg 3500w, http://blog.lan/images/c/6/1/e/a/c61ea450a86adc84bb81f6281670c18d645402a9-20140627-1304466x.jpeg 4128w, http://blog.lan/images/b/f/3/8/2/bf38260eb0f49d02dced462f10ca4557e38b47d7-20140627-130446.jpeg 640w" sizes="100vw" /><img alt="" src="http://blog.lan/images/0/a/9/b/f/0a9bf45fa704176076186e54f7593b1863d3baba-20140627-130625.jpeg" srcset="http://blog.lan/images/6/c/5/e/7/6c5e7ea575e6eefba70e71692597ba03e6cbd6fe-20140627-1306252x.jpeg 1000w, http://blog.lan/images/b/8/0/0/2/b80022ca41c977fc1685859705b5bd104eebd1d5-20140627-1306253x.jpeg 1500w, http://blog.lan/images/3/2/1/5/6/32156f3f3e0767ed1287973677d79e51eb40bd4c-20140627-1306254x.jpeg 2500w, http://blog.lan/images/9/c/d/2/b/9cd2b06d8f63505aaa5475df549b11a19de70a8f-20140627-1306255x.jpeg 3500w, http://blog.lan/images/6/f/0/6/6/6f06670680ca5010a2d3f642c53dfd1e7d3aa10c-20140627-1306256x.jpeg 4128w, http://blog.lan/images/0/a/9/b/f/0a9bf45fa704176076186e54f7593b1863d3baba-20140627-130625.jpeg 640w" sizes="100vw" /><img alt="" src="http://blog.lan/images/f/e/1/0/5/fe1058742f5baf5141a39f0b27d095cb42879f05-20140627-145420.jpeg" srcset="http://blog.lan/images/1/6/f/9/7/16f97069e672d22b047fa2a9096d47748a7b60eb-20140627-1454202x.jpeg 1000w, http://blog.lan/images/b/9/9/b/e/b99bee7a554a69c55a86c266b47cc50581626d73-20140627-1454203x.jpeg 1500w, http://blog.lan/images/6/6/e/c/0/66ec0adb7ed9d5c59a0ed1dc18946e804691c472-20140627-1454204x.jpeg 2500w, http://blog.lan/images/4/0/a/4/2/40a4254e8deb0c0311118ee22848a360cdaf5a62-20140627-1454205x.jpeg 3500w, http://blog.lan/images/d/d/7/2/f/dd72fb2bb7e5cb28a7af6a37930bc93a4ed6b64b-20140627-1454206x.jpeg 4128w, http://blog.lan/images/f/e/1/0/5/fe1058742f5baf5141a39f0b27d095cb42879f05-20140627-145420.jpeg 640w" sizes="100vw" /><img alt="" src="http://blog.lan/images/5/d/a/1/6/5da1694c41056415e311d2ef5114e4cb7c363c09-20140627-125516.jpeg" srcset="http://blog.lan/images/b/1/1/f/c/b11fc9072a306d6a1464ffceeafc6d9d244d0881-20140627-1255162x.jpeg 1000w, http://blog.lan/images/d/1/b/d/5/d1bd52e2f53c1a6c02137ae9855b7570bf6d87b2-20140627-1255163x.jpeg 1500w, http://blog.lan/images/8/a/c/0/2/8ac024c02f3cf79f80c11536a833020badb7d0cb-20140627-1255164x.jpeg 2500w, http://blog.lan/images/8/a/d/d/6/8add6ba3c934760c9a2dbc5b04ed1ecb40f264de-20140627-1255165x.jpeg 3500w, http://blog.lan/images/d/9/8/0/c/d980c9df551c7b9080143f8b9e5284b37f156659-20140627-1255166x.jpeg 4128w, http://blog.lan/images/5/d/a/1/6/5da1694c41056415e311d2ef5114e4cb7c363c09-20140627-125516.jpeg 640w" sizes="100vw" /><img alt="" src="http://blog.lan/images/2/6/4/b/9/264b9dd8e5ad3494d28a27ba0edbfdb02dc4dddd-20140627-125541.jpeg" srcset="http://blog.lan/images/2/c/0/c/5/2c0c57eb33d15fa01e64f5e8f5dc42018ff89814-20140627-1255412x.jpeg 1000w, http://blog.lan/images/e/9/d/1/6/e9d162aecccb3a31cb919e087391313e36c2a62a-20140627-1255413x.jpeg 1500w, http://blog.lan/images/6/7/e/e/a/67eea2cf916d1db050dd461898b52aae6f243ea7-20140627-1255414x.jpeg 2500w, http://blog.lan/images/4/c/5/b/d/4c5bde68932c6b09f033376d0ed59927efe12741-20140627-1255415x.jpeg 3500w, http://blog.lan/images/8/8/d/6/1/88d615486cfc37b4b770b370644a1f89e8867e57-20140627-1255416x.jpeg 4128w, http://blog.lan/images/2/6/4/b/9/264b9dd8e5ad3494d28a27ba0edbfdb02dc4dddd-20140627-125541.jpeg 640w" sizes="100vw" /></p>
+    </div>
+
+    </div>
+
+<p class="prev-next text-center">
+                <a class="btn" href="http://blog.lan/digiscoping"><i class="fa fa-angle-left"></i> Previous Post</a>
+    
+            <a class="btn" href="http://blog.lan/motorcycle-tour-scotland">Next Post <i class="fa fa-angle-right"></i></a>
+    </p>
+                </div>
+        <div id="sidebar" class="column col-3 col-md-12">
+                        
+
+
+
+<div class="sidebar-content">
+    <h4>Popular Tags</h4>
+    
+<span class="tags">
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:IT">IT</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:motorcycling">motorcycling</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:skiing">skiing</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:sailing">sailing</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:kayaking">kayaking</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:cycling">cycling</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:3dprinting">3dprinting</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:conference">conference</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:photography">photography</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:scooting">scooting</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:KDB">KDB</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:datascience">datascience</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:bigdata">bigdata</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:parachuting">parachuting</a>
+    </span>
+</div>
+<div class="sidebar-content syndicate">
+    <h4>Syndicate</h4>
+    <a class="btn" href="http://blog.lan.atom"><i class="fa fa-rss-square"></i> Atom 1.0</a>
+    <a class="btn" href="http://blog.lan.rss"><i class="fa fa-rss-square"></i> RSS</a>
+    </div>
+                </div>
+    </div>
+
+
+    </section>
+</section>
+        </section>
+
+    </div>
+
+    
+    <div class="mobile-container">
+        <div class="overlay" id="overlay">
+            <div class="mobile-logo">
+                <a href="http://blog.lan" class="navbar-brand mr-10">
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="9.8598633mm"
+   height="7.730794mm"
+   viewBox="0 0 9.8598631 7.730794"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="grav-logo.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="15.839192"
+     inkscape:cx="15.503551"
+     inkscape:cy="12.106581"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1365"
+     inkscape:window-x="1920"
+     inkscape:window-y="34"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-37.097033,-95.84874)">
+    <path
+       style="fill:#00000b;fill-opacity:1;stroke:none;stroke-width:0.23684061"
+       d="m 42.208559,91.051277 c 4.26619,0 7.700704,3.434514 7.700704,7.700704 0,4.266189 -3.434514,7.700709 -7.700704,7.700709 -4.266191,0 -7.700705,-3.43452 -7.700705,-7.700709 0,-4.26619 3.434514,-7.700704 7.700705,-7.700704 z"
+       id="rect819" />
+    <g
+       aria-label="LiT"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#3591ff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       id="text817">
+      <path
+         d="m 37.451894,101.84634 h 2.950724 v 0.81132 h -3.90157 v -7.524087 h 0.950846 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#3591ff;fill-opacity:1;stroke-width:0.26458332"
+         id="path822" />
+      <path
+         d="M 42.386993,102.65766 H 41.47232 v -5.591388 h 0.914673 z m 0.07235,-7.074502 q 0,0.232544 -0.129191,0.387573 -0.129191,0.15503 -0.392741,0.15503 -0.258382,0 -0.387573,-0.15503 -0.129191,-0.155029 -0.129191,-0.387573 0,-0.232544 0.129191,-0.392741 0.129191,-0.160197 0.387573,-0.160197 0.258382,0 0.387573,0.165365 0.134359,0.160197 0.134359,0.387573 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#3591ff;fill-opacity:1;stroke-width:0.26458332"
+         id="path824" />
+      <path
+         d="m 48.350453,95.950061 h -1.979207 v 6.707599 h -0.945679 v -6.707599 h -1.974039 v -0.816488 h 4.898925 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#3591ff;fill-opacity:1;stroke-width:0.26458332"
+         id="path826" />
+    </g>
+  </g>
+</svg>
+</a>            </div>
+            <nav class="overlay-menu">
+                
+<ul class="tree">
+                      <li>
+        <a href="http://blog.lan" class="active">
+          blog
+        </a>
+        <ul>
+                            <li>
+        <a href="http://blog.lan/digiscoping" class="">
+          Digiscoping
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/bye-bye-cbr-hello-848" class="">
+          Bye Bye CBR, Hello 848
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/biking-in-the-snow" class="">
+          Biking in the snow
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/testing-the-triumph-sprint-gt-1050" class="">
+          Testing the Triumph Sprint GT 1050
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/rome-by-bike" class="">
+          Rome by Bike
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/motorcycle-tour-scotland" class="">
+          Motorcycle Tour, Scotland
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/motorcycle-tour-wales" class="">
+          Motorcycle Tour, Wales
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/tuscany-and-back-in-a-weekend-by-bike" class="">
+          Tuscany and Back in a Weekend... by Bike
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/into-the-arctic-circle-norway" class="">
+          Biking Into the Arctic Circle, Norway
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/solo-through-the-alps" class="">
+          Solo through the Alps
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/failing-to-parachute-in-a-good-way" class="">
+          Failing to Parachute (In a Good Way)
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/sailing-the-solent" class="">
+          Sailing the Solent
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/sailing-in-corfu" class="">
+          Sailing Around Corfu
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/building-a-kayak-sailing-rig" class="">
+          Building a Kayak Sailing Rig
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/skiing-in-yllas-finland" class="">
+          Skiing in Val Gardena
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/back-to-val-gardena" class="">
+          Back to Val Gardena
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/che-bella-dolomiti" class="">
+          Che Bella Dolomiti!
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/skiing-in-saalbach" class="">
+          Skiing in Saalbach
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/back-on-the-snow" class="">
+          Back on the Snow
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/skiing-courchevel" class="">
+          Skiing Courchevel
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/whistler-canada" class="">
+          Whistler, Canada
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/val-disere" class="">
+          Val d'Isere
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/synology-migration" class="">
+          Data Migration
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/better-code-management" class="">
+          Better Code Management
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/disaster" class="">
+          Disaster
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/a-personal-portal" class="">
+          A Personal Portal
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/python-udev-rules" class="">
+          Python udev Rules
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/improved-docker-interface" class="">
+          Improved Docker Interface
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/3d-printed-laptop-stand" class="">
+          3d Printed Laptop Stand
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/tomato-router" class="">
+          Tomato Router
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/reverse-proxying-containers" class="">
+          Reverse Proxying Containers
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/website-revamp" class="">
+          Website Revamp
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/new-kayak-sailing-rig" class="">
+          New Kayak Sailing Rig
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/replacing-land-line-with-voip" class="">
+          Replacing land-line with VoIP
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/security-on-the-road" class="">
+          Security on the Road
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/custom-router-firmware" class="">
+          Extending WiFi with Custom Router Firmware
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/converting-the-mountain-bike-to-slicks" class="">
+          Converting the Mountain Bike to Slicks
+        </a>
+      </li>
+      
+        </ul>
+      </li>
+      
+</ul>
+
+            </nav>
+        </div>
+    </div>
+
+    <script src="http://blog.lan/user/themes/myblog/js/jquery.treemenu.js"></script>
+<script src="http://blog.lan/user/themes/myblog/js/site.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Python udev Rules | LiT</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="GravCMS" />
+    <meta name="description" content="Grav is an easy to use, yet powerful, open source flat-file CMS" />
+
+    <link rel="icon" type="image/png" href="http://blog.lan/user/themes/myblog/images/favicon.png" />
+    <link rel="canonical" href="http://blog.lan/python-udev-rules" />
+
+                        
+            
+    <link href="http://blog.lan/user/plugins/markdown-notices/assets/notices.css" type="text/css" rel="stylesheet">
+<link href="http://blog.lan/user/plugins/form/assets/form-styles.css" type="text/css" rel="stylesheet">
+<link href="http://blog.lan/user/plugins/login/css/login.css" type="text/css" rel="stylesheet">
+<link href="http://blog.lan/user/themes/myblog/css-compiled/spectre.min.css" type="text/css" rel="stylesheet">
+<link href="http://blog.lan/user/themes/myblog/css-compiled/theme.min.css" type="text/css" rel="stylesheet">
+<link href="http://blog.lan/user/themes/myblog/css/custom.css" type="text/css" rel="stylesheet">
+<link href="http://blog.lan/user/themes/myblog/css/line-awesome.min.css" type="text/css" rel="stylesheet">
+
+    <script src="http://blog.lan/system/assets/jquery/jquery-2.x.min.js"></script>
+
+</head>
+<body id="top" class=" header-fixed header-animated sticky-footer">
+    <div id="page-wrapper">
+            <section id="header" class="section">
+            <section class="container grid-lg">
+                <nav class="navbar">
+                    <section class="navbar-section logo">
+                                                <h3><a href="/" title="Home">Rob Smith | <b>Life in Timelapse</b></a></h3>
+                    </section>
+                    <section class="navbar-section desktop-menu">
+
+                                                                    </section>
+                </nav>
+            </section>
+        </section>
+            
+    
+        <section id="start">
+        <section id="body-wrapper" class="section blog-listing">
+    <section class="container grid-lg">
+
+        
+        
+<div class="columns">
+    <div id="item" class="column col-9 col-md-12 extra-spacing">
+                        <div class="content-item h-entry">
+
+    <div class="content-title text-center">
+            <h2 class="p-name mt-1"><a href="http://blog.lan/python-udev-rules" class="u-url">Python udev Rules</a></h2>
+                <span class="blog-date">
+    <time class="dt-published" datetime="2019-04-22T15:10:00+01:00">
+        <i class="fa fa-calendar"></i> 22nd Apr 2019
+    </time>
+</span>
+        <span class="tags">
+        <a class="label label-rounded label-secondary p-category" href="http://blog.lan/tag:IT#body-wrapper">IT</a>
+    </span>
+    </div>
+    <div class="e-content">
+        <p>I've had a Wacom graphics tablet for a number of years now. I've never been completely happy with it's performance in either Windows or Linux - pointer movement was jerky and the accleration far too aggressive. Also switching between the configuration options appropriate for particular tasks, such as general desktop use or photo editing was tedious and convoluted. To switch between relative or screen mapped pointer motion, or to change the mapped screen, I would have to bring up the control panel and click through the settings. More often than not I would use the mouse to get something done quickly, although the tablet would have been more suitable.</p>
+<p>Recently I tested out the libinput wacom driver on Linux and it's a huge improvement over the Xorg driver in my opinion. No more jerky pointer movement and with a slight tweak to the accleration value, the tablet finally feels really good to use. Also, with libinput being the future Wayland driver, I know that this configuration is future-proofed when I finally have to move from Xorg. With that in mind, I thought it would be worth taking the time myself to address the remaining configuration issues and make the tablet really useful.</p>
+<p>To do this, I would need to use udev to detect when the tablet is connected and configure it (it can only be configured with xinput after it is connected). Taking advice from the StackExchange forums, I decided to use pyudev, a Python library providing a high-level interface to udev and greatly simplifiying the process. A single python script without escalated privileges is sufficient to detect tablet connection and trigger reconfiguration. It is triggered as a KDE startup script and kept running as a service:</p>
+<pre><code>#!/usr/bin/env python3
+
+import pyudev
+import subprocess
+import pprint
+
+from evdev import InputDevice,list_devices
+devices = [InputDevice(fn) for fn in list_devices()]
+
+def main():
+    context = pyudev.Context()
+    monitor = pyudev.Monitor.from_netlink(context)
+    monitor.filter_by(subsystem='input')
+    monitor.start()
+
+    for device in iter(monitor.poll, None):
+        if 'NAME' in device:
+            if device['NAME'] == '"Wacom Bamboo 2FG 6x8 Pen"':
+                if device['ACTION'] == 'add':
+                    subprocess.call(['/home/rob/scripts/wacom-bamboo/wacom-connect.sh'])
+                elif device['ACTION'] == 'remove':
+                    subprocess.call(['/home/rob/scripts/wacom-bamboo/wacom-disconnect.sh'])
+
+if __name__ == '__main__':
+    main()</code></pre>
+<p>The script wacom-connect.sh uses xinput to configure the tablet pointer/buttons and set the default screen mapping.</p>
+<pre><code>#!/bin/bash
+
+sleep 1
+natscrollpropid=$(xinput list-props "Wacom Bamboo 2FG 6x8 Finger" | grep 'Natural Scrolling Enabled (' | awk -F '[(), \t]*' '{print $6}')
+draglockpropid=$(xinput list-props "Wacom Bamboo 2FG 6x8 Finger" | grep 'Tapping Drag Lock Enabled (' | awk -F '[(), \t]*' '{print $7}')
+accelspeedpropid=$(xinput list-props "Wacom Bamboo 2FG 6x8 Finger" | grep 'libinput Accel Speed (' | awk -F '[(), \t]*' '{print $5}')
+
+xinput set-button-map "Wacom Bamboo 2FG 6x8 Pad" 18 17 16 4 5 6 7 15
+xinput set-prop "Wacom Bamboo 2FG 6x8 Finger" $natscrollpropid 1
+xinput set-prop "Wacom Bamboo 2FG 6x8 Finger" $draglockpropid 1
+xinput set-prop "Wacom Bamboo 2FG 6x8 Finger" $accelspeedpropid -.2
+
+hdmi=$(xrandr --listmonitors | grep HDMI | awk '{print $4}')
+file="/home/rob/scripts/wacom-bamboo/WACOM-PEN-MAPPING-STATE"
+state=$(cat $file)
+
+if [ "$state" = "eDP-1" ];then
+    xinput map-to-output "Wacom Bamboo 2FG 6x8 Pen Pen (0)" "eDP1"
+elif [ "$state" = "HDMI-1" ] &amp;&amp; [ "$hdmi" = "HDMI-1" ];then
+    xinput map-to-output "Wacom Bamboo 2FG 6x8 Pen Pen (0)" "HDMI1"
+fi
+
+notify-send -a 'Wacom Bamboo' 'Wacom Bamboo Connected' -i /usr/share/icons/breeze/devices/64/input-tablet.svg</code></pre>
+<p>Lastly it sends me a handy notification to the desktop to let me know that this has all taken place.</p>
+<p><img alt="" src="http://blog.lan/images/e/3/c/6/f/e3c6fc0f4ead0e648ac067e20dc6bc6a0dc83b96-wacom-notice.png" /></p>
+<p>The top two tablet buttons now call scripts to change the screen mapping and toggle touch on and off. Further desktop notifications are sent to provide feedback:</p>
+<pre><code>#!/bin/bash
+
+hdmi=$(xrandr --listmonitors | grep HDMI | awk '{print $4}')
+file="/home/rob/scripts/wacom-bamboo/WACOM-PEN-MAPPING-STATE"
+state=$(cat $file)
+coordmatrixid=$(xinput list-props "Wacom Bamboo 2FG 6x8 Pen Pen (0)" | grep Coordinate | awk -F '[(), \t]*' '{print $5}')
+
+if [ "$state" = "" ] &amp;&amp; [ "$hdmi" = "HDMI1" ];then
+    xinput map-to-output "Wacom Bamboo 2FG 6x8 Pen Pen (0)" "HDMI1"
+    echo "HDMI1" &gt; /home/rob/scripts/wacom-bamboo/WACOM-PEN-MAPPING-STATE
+    notify-send -a 'Wacom Bamboo' 'Wacom Bamboo mapped to HDMI1' -i /usr/share/icons/breeze/devices/64/input-tablet.svg
+elif [ "$state" = "HDMI1" ];then
+    xinput map-to-output "Wacom Bamboo 2FG 6x8 Pen Pen (0)" "eDP1"
+    echo "eDP1" &gt; /home/rob/scripts/wacom-bamboo/WACOM-PEN-MAPPING-STATE
+    notify-send -a 'Wacom Bamboo' 'Wacom Bamboo mapped to eDP1' -i /usr/share/icons/breeze/devices/64/input-tablet.svg
+else
+    xinput set-float-prop "Wacom Bamboo 2FG 6x8 Pen Pen (0)" $coordmatrixid 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 1.000000
+    echo "" &gt; /home/rob/scripts/wacom-bamboo/WACOM-PEN-MAPPING-STATE
+    notify-send -a 'Wacom Bamboo' 'Wacom Bamboo mapped to all displays' -i /usr/share/icons/breeze/devices/64/input-tablet.svg
+fi</code></pre>
+<pre><code>#!/bin/bash
+
+state=$(xinput list-props "Wacom Bamboo 2FG 6x8 Finger" | grep "Device Enabled" | awk '{print $4}')
+
+if [ $state == '1' ];then
+    xinput disable "Wacom Bamboo 2FG 6x8 Finger"
+    notify-send -a 'Wacom Bamboo' 'Wacom Bamboo touch disabled' -i /usr/share/icons/breeze/devices/64/input-tablet.svg
+else
+    xinput enable "Wacom Bamboo 2FG 6x8 Finger"
+    notify-send -a 'Wacom Bamboo' 'Wacom Bamboo touch enabled' -i /usr/share/icons/breeze/devices/64/input-tablet.svg
+fi</code></pre>
+    </div>
+
+    </div>
+
+<p class="prev-next text-center">
+                <a class="btn" href="http://blog.lan/val-disere"><i class="fa fa-angle-left"></i> Previous Post</a>
+    
+            <a class="btn" href="http://blog.lan/disaster">Next Post <i class="fa fa-angle-right"></i></a>
+    </p>
+                </div>
+        <div id="sidebar" class="column col-3 col-md-12">
+                        
+
+
+
+<div class="sidebar-content">
+    <h4>Popular Tags</h4>
+    
+<span class="tags">
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:IT">IT</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:motorcycling">motorcycling</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:skiing">skiing</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:sailing">sailing</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:kayaking">kayaking</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:cycling">cycling</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:3dprinting">3dprinting</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:conference">conference</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:photography">photography</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:scooting">scooting</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:KDB">KDB</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:datascience">datascience</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:bigdata">bigdata</a>
+                    <a class="label label-rounded label-secondary" href="http://blog.lan/tag:parachuting">parachuting</a>
+    </span>
+</div>
+<div class="sidebar-content syndicate">
+    <h4>Syndicate</h4>
+    <a class="btn" href="http://blog.lan.atom"><i class="fa fa-rss-square"></i> Atom 1.0</a>
+    <a class="btn" href="http://blog.lan.rss"><i class="fa fa-rss-square"></i> RSS</a>
+    </div>
+                </div>
+    </div>
+
+
+    </section>
+</section>
+        </section>
+
+    </div>
+
+    
+    <div class="mobile-container">
+        <div class="overlay" id="overlay">
+            <div class="mobile-logo">
+                <a href="http://blog.lan" class="navbar-brand mr-10">
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="9.8598633mm"
+   height="7.730794mm"
+   viewBox="0 0 9.8598631 7.730794"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="grav-logo.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="15.839192"
+     inkscape:cx="15.503551"
+     inkscape:cy="12.106581"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1365"
+     inkscape:window-x="1920"
+     inkscape:window-y="34"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-37.097033,-95.84874)">
+    <path
+       style="fill:#00000b;fill-opacity:1;stroke:none;stroke-width:0.23684061"
+       d="m 42.208559,91.051277 c 4.26619,0 7.700704,3.434514 7.700704,7.700704 0,4.266189 -3.434514,7.700709 -7.700704,7.700709 -4.266191,0 -7.700705,-3.43452 -7.700705,-7.700709 0,-4.26619 3.434514,-7.700704 7.700705,-7.700704 z"
+       id="rect819" />
+    <g
+       aria-label="LiT"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#3591ff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       id="text817">
+      <path
+         d="m 37.451894,101.84634 h 2.950724 v 0.81132 h -3.90157 v -7.524087 h 0.950846 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#3591ff;fill-opacity:1;stroke-width:0.26458332"
+         id="path822" />
+      <path
+         d="M 42.386993,102.65766 H 41.47232 v -5.591388 h 0.914673 z m 0.07235,-7.074502 q 0,0.232544 -0.129191,0.387573 -0.129191,0.15503 -0.392741,0.15503 -0.258382,0 -0.387573,-0.15503 -0.129191,-0.155029 -0.129191,-0.387573 0,-0.232544 0.129191,-0.392741 0.129191,-0.160197 0.387573,-0.160197 0.258382,0 0.387573,0.165365 0.134359,0.160197 0.134359,0.387573 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#3591ff;fill-opacity:1;stroke-width:0.26458332"
+         id="path824" />
+      <path
+         d="m 48.350453,95.950061 h -1.979207 v 6.707599 h -0.945679 v -6.707599 h -1.974039 v -0.816488 h 4.898925 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#3591ff;fill-opacity:1;stroke-width:0.26458332"
+         id="path826" />
+    </g>
+  </g>
+</svg>
+</a>            </div>
+            <nav class="overlay-menu">
+                
+<ul class="tree">
+                      <li>
+        <a href="http://blog.lan" class="active">
+          blog
+        </a>
+        <ul>
+                            <li>
+        <a href="http://blog.lan/digiscoping" class="">
+          Digiscoping
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/bye-bye-cbr-hello-848" class="">
+          Bye Bye CBR, Hello 848
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/biking-in-the-snow" class="">
+          Biking in the snow
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/testing-the-triumph-sprint-gt-1050" class="">
+          Testing the Triumph Sprint GT 1050
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/rome-by-bike" class="">
+          Rome by Bike
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/motorcycle-tour-scotland" class="">
+          Motorcycle Tour, Scotland
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/motorcycle-tour-wales" class="">
+          Motorcycle Tour, Wales
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/tuscany-and-back-in-a-weekend-by-bike" class="">
+          Tuscany and Back in a Weekend... by Bike
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/into-the-arctic-circle-norway" class="">
+          Biking Into the Arctic Circle, Norway
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/solo-through-the-alps" class="">
+          Solo through the Alps
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/failing-to-parachute-in-a-good-way" class="">
+          Failing to Parachute (In a Good Way)
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/sailing-the-solent" class="">
+          Sailing the Solent
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/sailing-in-corfu" class="">
+          Sailing Around Corfu
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/building-a-kayak-sailing-rig" class="">
+          Building a Kayak Sailing Rig
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/skiing-in-yllas-finland" class="">
+          Skiing in Val Gardena
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/back-to-val-gardena" class="">
+          Back to Val Gardena
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/che-bella-dolomiti" class="">
+          Che Bella Dolomiti!
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/skiing-in-saalbach" class="">
+          Skiing in Saalbach
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/back-on-the-snow" class="">
+          Back on the Snow
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/skiing-courchevel" class="">
+          Skiing Courchevel
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/whistler-canada" class="">
+          Whistler, Canada
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/val-disere" class="">
+          Val d'Isere
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/synology-migration" class="">
+          Data Migration
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/better-code-management" class="">
+          Better Code Management
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/disaster" class="">
+          Disaster
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/a-personal-portal" class="">
+          A Personal Portal
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/python-udev-rules" class="active">
+          Python udev Rules
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/improved-docker-interface" class="">
+          Improved Docker Interface
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/3d-printed-laptop-stand" class="">
+          3d Printed Laptop Stand
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/tomato-router" class="">
+          Tomato Router
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/reverse-proxying-containers" class="">
+          Reverse Proxying Containers
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/website-revamp" class="">
+          Website Revamp
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/new-kayak-sailing-rig" class="">
+          New Kayak Sailing Rig
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/replacing-land-line-with-voip" class="">
+          Replacing land-line with VoIP
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/security-on-the-road" class="">
+          Security on the Road
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/custom-router-firmware" class="">
+          Extending WiFi with Custom Router Firmware
+        </a>
+      </li>
+                    <li>
+        <a href="http://blog.lan/converting-the-mountain-bike-to-slicks" class="">
+          Converting the Mountain Bike to Slicks
+        </a>
+      </li>
+      
+        </ul>
+      </li>
+      
+</ul>
+
+            </nav>
+        </div>
+    </div>
+
+    <script src="http://blog.lan/user/themes/myblog/js/jquery.treemenu.js"></script>
+<script src="http://blog.lan/user/themes/myblog/js/site.js"></script>
+
+
+</body>
+</html>
