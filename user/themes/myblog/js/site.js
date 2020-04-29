@@ -55,5 +55,22 @@ jQuery(document).ready(function($){
 
     // Tree Menu
     $(".tree").treemenu({delay:300});
-
+    
+    /*My changes to keep sidebar responsive with position fixed
+    var alterClass = function() {
+        var ww = document.body.clientWidth;
+        if (ww < 840) {
+            $('.sidebar-content.fixed').removeClass('p-fixed');
+        } else if (ww >= 401) {
+        $('.sidebar-content.fixed').addClass('p-fixed');
+        };
+    };
+  
+    $(window).resize(function(){
+        alterClass();
+    });
+    
+    //Fire it when the page first loads:
+    alterClass();
+*/
 });

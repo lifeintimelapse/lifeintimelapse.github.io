@@ -113,7 +113,7 @@ body {
 }
 
 
-/* theme.min.css | http://blog.lan/user/themes/myblog/css-compiled/theme.min.css */
+/* theme.min.css | https://lifeintimelapse.github.io/user/themes/myblog/css-compiled/theme.min.css */
 
 #header .navbar-section {
   /* height: 4rem; */
@@ -138,7 +138,7 @@ body.header-fixed.header-animated #header.scrolled {
 }
 
 
-/* custom.css | http://blog.lan/user/themes/myblog/css/custom.css */
+/* custom.css | https://lifeintimelapse.github.io/user/themes/myblog/css/custom.css */
 
 h1, h2, h3, h4, h5, h6 {
   /* color: #c3c3c3; */
@@ -163,14 +163,14 @@ body {
 }
 
 
-/* Element | http://blog.lan/mobiletest-4 */
+/* Element | https://lifeintimelapse.github.io/mobiletest-4 */
 
 a.btn:nth-child(1) {
   background: black;
 }
 
 
-/* theme.min.css | http://blog.lan/user/themes/myblog/css-compiled/theme.min.css */
+/* theme.min.css | https://lifeintimelapse.github.io/user/themes/myblog/css-compiled/theme.min.css */
 
 #header a {
   color: #1e87dc;
@@ -179,3 +179,30 @@ a.btn:nth-child(1) {
 /* #item div p img {
 	max-width: 640px;
 } */
+
+img.cropimg {
+  margin-top: -4%;
+  margin-bottom: -7%;
+}
+
+.sidebar-content.tagsyndicate.show-md,.sidebar-content.aboutme.show-md{
+    background: black;
+    padding-left: 31px;
+    padding-bottom: 35px;
+}
+
+div.aboutme a:active, a:focus, a:hover {
+    color: #126bd9;
+    color: #227ded;
+}
+
+.sidebar-content {
+    top: 10%;
+
+#lineprofile {
+    width: 110px;
+    border-radius: 36;
+}
+
+#lineprofile:hover {
+}

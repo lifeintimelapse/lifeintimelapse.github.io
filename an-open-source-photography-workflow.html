@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from blog.lan/an-open-source-photography-workflow by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Apr 2020 22:54:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <title>An Open Source Photography Workflow | LiT</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="GravCMS" />
+    <meta name="description" content="Grav is an easy to use, yet powerful, open source flat-file CMS" />
+
+    <link rel="icon" type="image/png" href="user/themes/myblog/images/favicon.png" />
+    <link rel="canonical" href="an-open-source-photography-workflow.html" />
+
+                        
+            
+    <link href="user/plugins/sharer/assets/css/fontawesome-5.11.2.min.css" type="text/css" rel="stylesheet">
+<link href="user/plugins/sharer/assets/css/all.min.css" type="text/css" rel="stylesheet">
+<link href="user/plugins/sharer/assets/css-compiled/sharer.css" type="text/css" rel="stylesheet">
+<link href="user/plugins/markdown-notices/assets/notices.css" type="text/css" rel="stylesheet">
+<link href="user/plugins/form/assets/form-styles.css" type="text/css" rel="stylesheet">
+<link href="user/plugins/image-captions/css/image-captions.css" type="text/css" rel="stylesheet">
+<link href="user/plugins/login/css/login.css" type="text/css" rel="stylesheet">
+<link href="user/themes/myblog/css-compiled/spectre.min.css" type="text/css" rel="stylesheet">
+<link href="user/themes/myblog/css-compiled/theme.min.css" type="text/css" rel="stylesheet">
+<link href="user/themes/myblog/css/custom.css" type="text/css" rel="stylesheet">
+<link href="user/themes/myblog/css/line-awesome.min.css" type="text/css" rel="stylesheet">
+
+    <script src="system/assets/jquery/jquery-2.x.min.js"></script>
+<script src="user/plugins/sharer/assets/js/sharer.min.js"></script>
+<script>
+//<!-- Piwik -->
+  var _paq = _paq || [];
+  // tracker methods like "setCustomDimension" should be called before "trackPageView"
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="http://rassd.co.uk/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- Piwik Image Tracker-->
+<noscript><img src="http://rassd.co.uk/piwik/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /></noscript>
+<!-- End Piwik -->
+<script type="text/javascript">
+</script>
+
+</head>
+<body id="top" class=" header-fixed header-animated sticky-footer">
+    <div id="page-wrapper">
+            <section id="header" class="section">
+            <section class="container grid-lg">
+                <nav class="navbar">
+                    <section class="navbar-section logo">
+                                                <h3><a href="index.html" title="Home">Rob Smith | <b>Life in Timelapse</b></a></h3>
+                    </section>
+                    <section class="navbar-section desktop-menu">
+
+                                                                    </section>
+                </nav>
+            </section>
+        </section>
+            
+    
+        <section id="start">
+        <section id="body-wrapper" class="section blog-listing">
+    <section class="container grid-lg">
+
+        
+        
+<div class="columns">
+    <div id="item" class="column col-9 col-md-12 extra-spacing">
+                        <div class="content-item h-entry">
+
+    <div class="content-title text-center">
+            <h2 class="p-name mt-1"><a href="an-open-source-photography-workflow.html" class="u-url">An Open Source Photography Workflow</a></h2>
+                <span class="blog-date">
+    <time class="dt-published" datetime="2019-09-03T20:19:00+01:00">
+        <i class="fa fa-calendar"></i> 3rd Sep 2019
+    </time>
+</span>
+        <span class="tags">
+        <a class="label label-rounded label-secondary p-category" href="tag_IT.html#body-wrapper">IT</a>
+        <a class="label label-rounded label-secondary p-category" href="tag_photography.html#body-wrapper">photography</a>
+    </span>
+    </div>
+    <div class="e-content">
+        <p>Over the years my photo collection has grown and grown, especially since switching to digital photography circa 2007. A few years ago I decided to make a concerted effort to properly organise, backup and maintain my collection. Around the same time, I began to take an interest in manual photography and post-processing. These are my steps to creating a consistent workflow for importing, organising and editing, all on an open-source stack.</p>
+<p>The golden copies of my photos are stored on a 2TB external USB3 drive, which is fast enough for editing. The photos are backed up to my Synology NAS on import, which also means I can view them on the go when I don't have the hard drive with me, as I can access the NAS remotely through OpenVPN. I use a date based filesystem structure and add tags using a DAM (Digital Asset Manager) to help me locate photos. All my capture devices support GPS tagging; if they are unable to tag the location at capture time I add this later in review after import (this doesn't occur very often but Google timeline is a godsend when it does). Once photos are imported I review and give them a rating. Usually I'll select the in-camera JPEG if it's good enough, but post-process the RAW file if I think I can do a better job. I've found I just don't have the time to edit everything I want to keep, so this compromise approach works for me.</p>
+<h3>Getting to the Start-Line: A One-Time Cleanup</h3>
+<p>Before I could adopt my new approach, I had to clean up the existing collection. It was chaotic, some 30,000 photos scattered across various memory cards and drives. Likewise my backups were a mix of cloud storage, NAS, CDs and DVDs - it depended on when the photos were taken and what options I had at the time. </p>
+<p>I copied all the photos, including backups in case any originals had been overlooked, into a single directory. Then I used <a href="https://github.com/ivandokov/phockup">Phockup</a> to sort the photos into my preferred structure using their internal EXIF data. Phockup's name belies it's usefulness - it is invaluable in applying consistent organisation and naming and identifying duplicates. A couple of other tools were useful, where there were issues with the EXIF data: <a href="https://www.haplessgenius.com/photogrok/">PhotoGrok</a> lets you browse EXIF and <a href="https://exiftool.org/">EXIFTool</a> is an incredibly powerful CLI EXIF editor.</p>
+<p>Eventually I had the photos organised into a single directory tree, with a folder for each year and folders below for each month. There were 20,000 photos remaining after the cleanup, so around 10,000 duplicates removed. </p>
+<pre><code>├── 1994
+│   ├── 05May
+│   │   ├── 19940501-120001.jpg
+│   │   ├── 19940501-120001.jpg.xmp
+│   │   ├── 19940501-120002.jpg
+ ...
+├── 2020
+│   ├── 01Jan
+│   │   ├── 20200101-115248_01.jpg
+│   │   ├── 20200101-115248_01.jpg.xmp
+│   │   ├── 20200101-115248.dng
+ ...</code></pre>
+<h3>Importing New Photos</h3>
+<p><a href="https://www.damonlynch.net/rapid/">Rapid Photo Downloader</a> handles the imports. It will remember devices and photographs that have already been imported, dropping them from subsequent imports. Your preferred directory structure and naming can be configured with regular expressions, with files and directories being named using EXIF data from the photos. It can be configured to import photos to a primary repository and a backup location. </p>
+<figure class="image-caption"><img title="Moving photos from a capture device with Rapid Photo Downloader" alt="" class="caption" src="images/d/0/0/c/e/d00cec3d805b58f35bee4bda21fb2986d8ccc6c4-screenshot20200417192917.png" srcset="https://lifeintimelapse.github.io/images/5/0/1/0/f/5010f602818417c9af7d798f9b62d431f32fa8b6-screenshot202004171929172x.png 1000w, https://lifeintimelapse.github.io/images/2/3/d/2/2/23d228687b7c38a9bd34b7be95bb11f0fc40d17a-screenshot202004171929173x.png 1500w, https://lifeintimelapse.github.io/images/5/8/f/7/1/58f71a0a3faa58ce45484ec529e71edffbbc54aa-screenshot202004171929174x.png 1943w, https://lifeintimelapse.github.io/images/d/0/0/c/e/d00cec3d805b58f35bee4bda21fb2986d8ccc6c4-screenshot20200417192917.png 640w" sizes="100vw"><figcaption class="">Moving photos from a capture device with Rapid Photo Downloader</figcaption></figure>
+<p>The user just has to maintain the self-discipline to run the import after each outing and delete the original photos from the device - Rapid Photo Downloader takes care of the rest. </p>
+<h3>Color Calibration</h3>
+<p>I use an X-rite i1 DisplayPro colourimeter with the <a href="https://displaycal.net/">DisplayCAL</a> calibration software to colour calibrate my displays for colour accuracy. The KDE Plasma desktop supports the generated ICC profiles.</p>
+<figure class="image-caption"><img title="Display colour calibration in DisplayCAL" alt="" class="caption" src="images/6/3/9/7/c/6397c835afc3edee52ae6a37ea195b68afc60a63-screenshot20200425012154.png" srcset="https://lifeintimelapse.github.io/images/a/0/6/5/1/a0651f65d690d117bb12aea66213a47b765a3417-screenshot202004250121542x.png 1215w, https://lifeintimelapse.github.io/images/6/3/9/7/c/6397c835afc3edee52ae6a37ea195b68afc60a63-screenshot20200425012154.png 640w" sizes="100vw"><figcaption class="">Display colour calibration in DisplayCAL</figcaption></figure><figure class="image-caption"><img title="Setting the display colour profile in KDE Plasma desktop" alt="" class="caption" src="images/1/3/3/1/7/1331753676e27471bb2bf6b11ccc5251be75df6f-screenshot20200425012339.png" srcset="https://lifeintimelapse.github.io/images/d/c/8/8/0/dc8805c496e11c508668cabba09389a0c031917e-screenshot202004250123392x.png 1729w, https://lifeintimelapse.github.io/images/1/3/3/1/7/1331753676e27471bb2bf6b11ccc5251be75df6f-screenshot20200425012339.png 640w" sizes="100vw"><figcaption class="">Setting the display colour profile in KDE Plasma desktop</figcaption></figure>
+<h3>Management: Tagging, Geotagging, Reviewing and Rating</h3>
+<p>I use <a href="https://www.digikam.org/">Digikam</a> to manage the photos. It's been around for a long time, has a good reputation and excels as a DAM. It has excellent tools for tagging/geotagging, indexing, searching and filtering. Tags and metadata are stored in the files themselves, or in XMP sidecar files where the original filetype doesn't support this. This data is then accessible to other programs when viewing the files. The photos are kept in their original location. Digikam does have an internal database, but only for indexing performance reasons. If the database is lost, it can be rebuilt in its entirety from the information stored in the photos themselves.</p>
+<figure class="image-caption"><img title="A quarter-century photo archive in DigiKam. Date albums on the left, EXIF data in the right pane." alt="" class="caption" src="images/9/b/b/2/5/9bb25b216d1009cd9df8576bcf125e3b5acc1e62-screenshot20200415201719.png" srcset="https://lifeintimelapse.github.io/images/6/2/2/9/2/62292595fca113ada5cc6981aeff5f132c3024af-screenshot202004152017192x.png 1000w, https://lifeintimelapse.github.io/images/1/0/8/6/7/1086768c2b5602eb02104f891749f0b284342f90-screenshot202004152017193x.png 1500w, https://lifeintimelapse.github.io/images/f/8/b/9/3/f8b9375c4dbf0b7180a6e1f923892be5d1c90a2a-screenshot202004152017194x.png 2500w, https://lifeintimelapse.github.io/images/5/4/c/c/7/54cc79e9343b4df1988831359f05df0fa6bb2e48-screenshot202004152017195x.png 2690w, https://lifeintimelapse.github.io/images/9/b/b/2/5/9bb25b216d1009cd9df8576bcf125e3b5acc1e62-screenshot20200415201719.png 640w" sizes="100vw"><figcaption class="">A quarter-century photo archive in DigiKam. Date albums on the left, EXIF data in the right pane.</figcaption></figure>
+<p>My process in Digikam is to work through each month, selecting groups of photos by event, say a trip or family visit, and tag them with the event name, people, place and any other salient features that occur to me: animals, vehicles, scene type, etc. When I have been through each subgroup of photos by event, I select everything and examine the geotags, amending any erroneous entries and adding those that are missing. </p>
+<figure class="image-caption"><img title="Selecting photos in DigiKam from the tag tree. Tags of the selected photo are shown on the right." alt="" class="caption" src="images/a/e/8/8/5/ae8854ce35b03dac10d7dc0324b2cbfa5870bac2-screenshot20200415202649.png" srcset="https://lifeintimelapse.github.io/images/5/b/0/9/7/5b097f77eed0b12fc7e870cf7706d007478871ed-screenshot202004152026492x.png 1000w, https://lifeintimelapse.github.io/images/c/5/3/0/d/c530da96ba7842e9d30cf77a46bc730fa0833942-screenshot202004152026493x.png 1500w, https://lifeintimelapse.github.io/images/5/7/a/2/5/57a252c12483d8d46bcaab3372cb77dbe4e78ba3-screenshot202004152026494x.png 2500w, https://lifeintimelapse.github.io/images/9/0/d/1/e/90d1e8490031db07aa1ddb7a36b0a49bf21fb7e6-screenshot202004152026495x.png 2690w, https://lifeintimelapse.github.io/images/a/e/8/8/5/ae8854ce35b03dac10d7dc0324b2cbfa5870bac2-screenshot20200415202649.png 640w" sizes="100vw"><figcaption class="">Selecting photos in DigiKam from the tag tree. Tags of the selected photo are shown on the right.</figcaption></figure><figure class="image-caption"><img title="Viewing geodata in DigiKam" alt="" class="caption" src="images/3/7/1/f/5/371f551bb5b7dd72e93a6e49e439969ad8430e12-screenshot20200415203002.png" srcset="https://lifeintimelapse.github.io/images/6/3/3/7/f/6337f47840a60753af1151018c04cdd610c33933-screenshot202004152030022x.png 1000w, https://lifeintimelapse.github.io/images/f/1/c/7/a/f1c7a49738f966eb6b2cf07f78cfbcfe33b52a70-screenshot202004152030023x.png 1500w, https://lifeintimelapse.github.io/images/0/b/a/1/5/0ba153cf30ae855af754298de387884d62a550be-screenshot202004152030024x.png 2500w, https://lifeintimelapse.github.io/images/c/c/2/1/a/cc21acdb90041d261b357ddc57156992820cd94f-screenshot202004152030025x.png 2690w, https://lifeintimelapse.github.io/images/3/7/1/f/5/371f551bb5b7dd72e93a6e49e439969ad8430e12-screenshot20200415203002.png 640w" sizes="100vw"><figcaption class="">Viewing geodata in DigiKam</figcaption></figure>
+<p>Because the photos have yet to be tagged when they are imported, I have an rsync script to re-sync the updated photos to the NAS once I've completed the tagging. The rsync script is also useful if I'm ever away and unable to access the backup target at the time of import, I can run it when I return home and it will push any missing photos to the NAS.</p>
+<p><code>rsync -r -t -v --progress --delete -s /media/rob/PPDATA/digikam/ /mnt/photos/digikam</code></p>
+<h3>Editing</h3>
+<p>For complex edits, I use <a href="https://www.darktable.org/">Darktable</a>. While the built-in editor in DigiKam is capable, Darktable seems to give better results with some tasks such as editing curves, lens correction and denoising. Darktable metadata and ratings are interoperable with DigiKam, so changes are immediately visible in DigiKam.</p>
+<figure class="image-caption"><img title="RAW editing in Darktable" alt="" class="caption" src="images/f/6/b/e/e/f6beecb41e7e7cc90f59089d179e84b15fd89bbc-screenshot20200422165733.png" srcset="https://lifeintimelapse.github.io/images/5/a/6/7/0/5a670ce4164503fbeca3cd94d82c6fe4adaa0eee-screenshot202004221657332x.png 1000w, https://lifeintimelapse.github.io/images/b/b/c/a/4/bbca41f3f7dbbef491bf62cab10a3a50f8e9e845-screenshot202004221657333x.png 1500w, https://lifeintimelapse.github.io/images/3/f/e/4/0/3fe40f25ef5787472f6cbb6409825d700a67c88d-screenshot202004221657334x.png 1750w, https://lifeintimelapse.github.io/images/f/6/b/e/e/f6beecb41e7e7cc90f59089d179e84b15fd89bbc-screenshot20200422165733.png 640w" sizes="100vw"><figcaption class="">RAW editing in Darktable</figcaption></figure>
+<h3>Viewing</h3>
+<p>The PhotoStation web app on my Synology NAS is able to read all of the tags and metadata added to the files by DigiKam. There are apps for android and iOS for mobile browsing.</p>
+<figure class="image-caption"><img title="Searching DigiKam tagged photos in Synology Photo Station" alt="" class="caption" src="images/0/b/d/5/1/0bd51c7286b14895520c223bc0013fc5f108df7b-screenshot20200422171447.png" srcset="https://lifeintimelapse.github.io/images/1/1/e/5/f/11e5fcdc07734b25c7e78cd6daa64a972dd8a38d-screenshot202004221714472x.png 1000w, https://lifeintimelapse.github.io/images/5/d/c/7/7/5dc77f316eca57b330329d45c970bb8e848d3acc-screenshot202004221714473x.png 1500w, https://lifeintimelapse.github.io/images/4/0/7/e/4/407e42a57898e83d6a93a19118ab4658d67e5368-screenshot202004221714474x.png 1767w, https://lifeintimelapse.github.io/images/0/b/d/5/1/0bd51c7286b14895520c223bc0013fc5f108df7b-screenshot20200422171447.png 640w" sizes="100vw"><figcaption class="">Searching DigiKam tagged photos in Synology Photo Station</figcaption></figure><figure class="image-caption"><img width="250" title="Android PhotoStation App" alt="" class="caption" src="images/3/7/0/a/6/370a674aee855e5a80a7db9bf299ca50758428bc-screenshot20200425-015233dsphoto.png" srcset="https://lifeintimelapse.github.io/images/a/b/7/e/8/ab7e8b20e2842604ff58dbc45da4afb5d21ac68a-screenshot20200425-015233dsphoto2x.png 1440w, https://lifeintimelapse.github.io/images/3/7/0/a/6/370a674aee855e5a80a7db9bf299ca50758428bc-screenshot20200425-015233dsphoto.png 640w" sizes="100vw"><figcaption class="">Android PhotoStation App</figcaption></figure>
+<h3>Publishing</h3>
+<p>DigiKam and Darktable provide export helpers for most of the major file-sharing, gallery and social media sites. I have a <a href="https://piwigo.com/">Piwigo</a> hosted subscription for sharing with friends and family; it has exactly the features I wanted and being open source I can pack up my data and move to another vendor or self-host if I ever feel the need. It's a couple of clicks within DigiKam to upload to Piwigo.</p>
+<figure class="image-caption"><img title="Piwigo gallery showing photos and metadata added in DigiKam." alt="" class="caption" src="images/7/4/0/4/d/7404d6d0e9b882c1a0515480b8414f03853ddf6f-screenshot20200422184308.png" srcset="https://lifeintimelapse.github.io/images/8/7/3/a/1/873a12833ca32fd918a9f02bab92c153a8a72dba-screenshot202004221843082x.png 993w, https://lifeintimelapse.github.io/images/7/4/0/4/d/7404d6d0e9b882c1a0515480b8414f03853ddf6f-screenshot20200422184308.png 640w" sizes="100vw"><figcaption class="">Piwigo gallery showing photos and metadata added in DigiKam.</figcaption></figure>
+    </div>
+
+    
+    </div>
+
+<div class="sidebar-content sharer show-md text-center">
+    <div class="sharer-centered">
+        <h4>Share</h4>
+                    
+<div class="sharer-buttons-toolbar clearfix ">
+    
+        
+                <button class="sharer-circles--facebook" data-sharer="facebook"
+            data-url="https://lifeintimelapse.github.io/an-open-source-photography-workflow"
+    data-title="An Open Source Photography Workflow"
+            >
+
+                                        <span class="sharer-icon">
+                                <i class="fab fa-facebook"></i>        
+                </span>
+                        
+                            <span class="sharer-label">Facebook</span>
+                    </button>
+            
+        
+                <button class="sharer-circles--twitter" data-sharer="twitter"
+            data-url="https://lifeintimelapse.github.io/an-open-source-photography-workflow"
+    data-title="An Open Source Photography Workflow"
+            >
+
+                                        <span class="sharer-icon">
+                                <i class="fab fa-twitter"></i>        
+                </span>
+                        
+                            <span class="sharer-label">Twitter</span>
+                    </button>
+            
+        
+                <button class="sharer-circles--linkedin" data-sharer="linkedin"
+            data-url="https://lifeintimelapse.github.io/an-open-source-photography-workflow"
+    data-title="An Open Source Photography Workflow"
+            >
+
+                                        <span class="sharer-icon">
+                                <i class="fab fa-linkedin"></i>        
+                </span>
+                        
+                            <span class="sharer-label">Linkedin</span>
+                    </button>
+            
+        
+                <button class="sharer-circles--reddit" data-sharer="reddit"
+            data-url="https://lifeintimelapse.github.io/an-open-source-photography-workflow"
+    data-title="An Open Source Photography Workflow"
+            >
+
+                                        <span class="sharer-icon">
+                                <i class="fab fa-reddit"></i>        
+                </span>
+                        
+                            <span class="sharer-label">Reddit</span>
+                    </button>
+            </div>        
+    </div>
+</div>
+
+<p class="prev-next text-center">
+                <a class="btn" href="book-scanning-with-a-cameraphone.html"><i class="fa fa-angle-left"></i> Previous Post</a>
+    
+            <a class="btn" href="round-the-iow-again.html">Next Post <i class="fa fa-angle-right"></i></a>
+    </p>
+                </div>
+        <div id="sidebar" class="column col-3 col-md-12">
+                        
+<div class="sidebar-content fixed p-fixed">
+
+
+
+<div class="sidebar-content hide-md">
+    <h4>Popular Tags</h4>
+    
+<span class="tags">
+                    <a class="label label-rounded label-secondary" href="tag_IT.html">IT</a>
+                    <a class="label label-rounded label-secondary" href="tag_motorcycling.html">motorcycling</a>
+                    <a class="label label-rounded label-secondary" href="tag_skiing.html">skiing</a>
+                    <a class="label label-rounded label-secondary" href="tag_sailing.html">sailing</a>
+                    <a class="label label-rounded label-secondary" href="tag_cycling.html">cycling</a>
+                    <a class="label label-rounded label-secondary" href="tag_conference.html">conference</a>
+                    <a class="label label-rounded label-secondary" href="tag_kayaking.html">kayaking</a>
+                    <a class="label label-rounded label-secondary" href="tag_smarthome.html">smarthome</a>
+                    <a class="label label-rounded label-secondary" href="tag_3dprinting.html">3dprinting</a>
+                    <a class="label label-rounded label-secondary" href="tag_photography.html">photography</a>
+                    <a class="label label-rounded label-secondary" href="tag_it-2.html">it</a>
+                    <a class="label label-rounded label-secondary" href="tag_scooting.html">scooting</a>
+                    <a class="label label-rounded label-secondary" href="tag_datascience.html">datascience</a>
+                    <a class="label label-rounded label-secondary" href="tag_bigdata.html">bigdata</a>
+                    <a class="label label-rounded label-secondary" href="tag_parachuting.html">parachuting</a>
+                    <a class="label label-rounded label-secondary" href="tag_KDB.html">KDB</a>
+    </span>
+</div>
+<div class="sidebar-content syndicate hide-md">
+    <h4>Syndicate</h4>
+    <a class="btn" href="https://lifeintimelapse.github.io.atom/"><i class="fa fa-rss-square"></i> Atom 1.0</a>
+    <a class="btn" href="https://lifeintimelapse.github.io.rss/"><i class="fa fa-rss-square"></i> RSS</a>
+    </div>
+<div class="sidebar-content sharer hide-md">
+    <h4>Share</h4>
+                
+<div class="sharer-buttons-toolbar clearfix ">
+    
+        
+                <button class="sharer-circles--facebook" data-sharer="facebook"
+            data-url="https://lifeintimelapse.github.io/an-open-source-photography-workflow"
+    data-title="An Open Source Photography Workflow"
+            >
+
+                                        <span class="sharer-icon">
+                                <i class="fab fa-facebook"></i>        
+                </span>
+                        
+                            <span class="sharer-label">Facebook</span>
+                    </button>
+            
+        
+                <button class="sharer-circles--twitter" data-sharer="twitter"
+            data-url="https://lifeintimelapse.github.io/an-open-source-photography-workflow"
+    data-title="An Open Source Photography Workflow"
+            >
+
+                                        <span class="sharer-icon">
+                                <i class="fab fa-twitter"></i>        
+                </span>
+                        
+                            <span class="sharer-label">Twitter</span>
+                    </button>
+            
+        
+                <button class="sharer-circles--linkedin" data-sharer="linkedin"
+            data-url="https://lifeintimelapse.github.io/an-open-source-photography-workflow"
+    data-title="An Open Source Photography Workflow"
+            >
+
+                                        <span class="sharer-icon">
+                                <i class="fab fa-linkedin"></i>        
+                </span>
+                        
+                            <span class="sharer-label">Linkedin</span>
+                    </button>
+            
+        
+                <button class="sharer-circles--reddit" data-sharer="reddit"
+            data-url="https://lifeintimelapse.github.io/an-open-source-photography-workflow"
+    data-title="An Open Source Photography Workflow"
+            >
+
+                                        <span class="sharer-icon">
+                                <i class="fab fa-reddit"></i>        
+                </span>
+                        
+                            <span class="sharer-label">Reddit</span>
+                    </button>
+            </div>        
+</div>
+<div class="sidebar-content aboutme hide-md">
+    <h4><a href="about-me.html">About Me</a></h4>
+</div>
+</div>
+                </div>
+    </div>
+
+
+    </section>
+</section>
+        </section>
+
+    </div>
+
+        
+
+        
+    <div class="sidebar-content tagsyndicate show-md">
+        <div class="sidebar-content aboutme">
+            <h4><a href="about-me.html">About Me</a></h4>
+        </div>
+    
+                <div class="sidebar-content">
+            <h4>Popular Tags</h4>
+            
+<span class="tags">
+                    <a class="label label-rounded label-secondary" href="tag_IT.html">IT</a>
+                    <a class="label label-rounded label-secondary" href="tag_motorcycling.html">motorcycling</a>
+                    <a class="label label-rounded label-secondary" href="tag_skiing.html">skiing</a>
+                    <a class="label label-rounded label-secondary" href="tag_sailing.html">sailing</a>
+                    <a class="label label-rounded label-secondary" href="tag_cycling.html">cycling</a>
+                    <a class="label label-rounded label-secondary" href="tag_conference.html">conference</a>
+                    <a class="label label-rounded label-secondary" href="tag_kayaking.html">kayaking</a>
+                    <a class="label label-rounded label-secondary" href="tag_smarthome.html">smarthome</a>
+                    <a class="label label-rounded label-secondary" href="tag_3dprinting.html">3dprinting</a>
+                    <a class="label label-rounded label-secondary" href="tag_photography.html">photography</a>
+                    <a class="label label-rounded label-secondary" href="tag_it-2.html">it</a>
+                    <a class="label label-rounded label-secondary" href="tag_scooting.html">scooting</a>
+                    <a class="label label-rounded label-secondary" href="tag_datascience.html">datascience</a>
+                    <a class="label label-rounded label-secondary" href="tag_bigdata.html">bigdata</a>
+                    <a class="label label-rounded label-secondary" href="tag_parachuting.html">parachuting</a>
+                    <a class="label label-rounded label-secondary" href="tag_KDB.html">KDB</a>
+    </span>
+        </div>
+                                <div class="sidebar-content syndicate">
+            <h4>Syndicate</h4>
+            <a class="btn" href=".html"><i class="fa fa-rss-square"></i> Atom 1.0</a>
+            <a class="btn" href=".rss"><i class="fa fa-rss-square"></i> RSS</a>
+                    </div>
+            </div>
+    
+
+    <div class="mobile-container">
+        <div class="overlay" id="overlay">
+            <div class="mobile-logo">
+                <a href="index.html" class="navbar-brand mr-10">
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="9.8598633mm"
+   height="7.730794mm"
+   viewBox="0 0 9.8598631 7.730794"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="grav-logo.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="15.839192"
+     inkscape:cx="15.503551"
+     inkscape:cy="12.106581"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1365"
+     inkscape:window-x="1920"
+     inkscape:window-y="34"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-37.097033,-95.84874)">
+    <path
+       style="fill:#00000b;fill-opacity:1;stroke:none;stroke-width:0.23684061"
+       d="m 42.208559,91.051277 c 4.26619,0 7.700704,3.434514 7.700704,7.700704 0,4.266189 -3.434514,7.700709 -7.700704,7.700709 -4.266191,0 -7.700705,-3.43452 -7.700705,-7.700709 0,-4.26619 3.434514,-7.700704 7.700705,-7.700704 z"
+       id="rect819" />
+    <g
+       aria-label="LiT"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#3591ff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       id="text817">
+      <path
+         d="m 37.451894,101.84634 h 2.950724 v 0.81132 h -3.90157 v -7.524087 h 0.950846 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#3591ff;fill-opacity:1;stroke-width:0.26458332"
+         id="path822" />
+      <path
+         d="M 42.386993,102.65766 H 41.47232 v -5.591388 h 0.914673 z m 0.07235,-7.074502 q 0,0.232544 -0.129191,0.387573 -0.129191,0.15503 -0.392741,0.15503 -0.258382,0 -0.387573,-0.15503 -0.129191,-0.155029 -0.129191,-0.387573 0,-0.232544 0.129191,-0.392741 0.129191,-0.160197 0.387573,-0.160197 0.258382,0 0.387573,0.165365 0.134359,0.160197 0.134359,0.387573 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#3591ff;fill-opacity:1;stroke-width:0.26458332"
+         id="path824" />
+      <path
+         d="m 48.350453,95.950061 h -1.979207 v 6.707599 h -0.945679 v -6.707599 h -1.974039 v -0.816488 h 4.898925 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#3591ff;fill-opacity:1;stroke-width:0.26458332"
+         id="path826" />
+    </g>
+  </g>
+</svg>
+            </div>
+            <nav class="overlay-menu">
+                
+<ul class="tree">
+                      <li>
+        <a href="index.html" class="active">
+          blog
+        </a>
+        <ul>
+                            <li>
+        <a href="bye-bye-cbr-hello-848.html" class="">
+          Bye Bye CBR, Hello 848
+        </a>
+      </li>
+                    <li>
+        <a href="failing-to-parachute-in-a-good-way.html" class="">
+          Failing to Parachute (In a Good Way)
+        </a>
+      </li>
+                    <li>
+        <a href="converting-the-mountain-bike-to-slicks.html" class="">
+          Converting the Mountain Bike to Slicks
+        </a>
+      </li>
+                    <li>
+        <a href="biking-in-the-snow.html" class="">
+          Biking in the snow
+        </a>
+      </li>
+                    <li>
+        <a href="skiing-in-yllas-finland.html" class="">
+          Skiing in Val Gardena
+        </a>
+      </li>
+                    <li>
+        <a href="kx-at-the-k-club.html" class="">
+          kx at the K Club
+        </a>
+      </li>
+                    <li>
+        <a href="stripping-down-the-old-servers.html" class="">
+          Stripping Down Old Servers
+        </a>
+      </li>
+                    <li>
+        <a href="back-to-val-gardena.html" class="">
+          Back to Val Gardena
+        </a>
+      </li>
+                    <li>
+        <a href="testing-the-triumph-sprint-gt-1050.html" class="">
+          Testing the Triumph Sprint GT 1050
+        </a>
+      </li>
+                    <li>
+        <a href="rome-by-bike.html" class="">
+          Rome by Bike
+        </a>
+      </li>
+                    <li>
+        <a href="che-bella-dolomiti.html" class="">
+          Che Bella Dolomiti!
+        </a>
+      </li>
+                    <li>
+        <a href="digiscoping.html" class="">
+          Digiscoping
+        </a>
+      </li>
+                    <li>
+        <a href="3d-printed-camera-mount.html" class="">
+          3d Printed Camera Mount
+        </a>
+      </li>
+                    <li>
+        <a href="motorcycle-tour-scotland.html" class="">
+          Motorcycle Tour, Scotland
+        </a>
+      </li>
+                    <li>
+        <a href="3d-printed-window-latch-spacers.html" class="">
+          3d Printed Window Latch Spacers
+        </a>
+      </li>
+                    <li>
+        <a href="3d-printed-coffee-stand.html" class="">
+          3d Printed Coffee Machine Stand
+        </a>
+      </li>
+                    <li>
+        <a href="skiing-in-saalbach.html" class="">
+          Skiing in Saalbach
+        </a>
+      </li>
+                    <li>
+        <a href="tomato-router.html" class="">
+          Tomato Router
+        </a>
+      </li>
+                    <li>
+        <a href="50-shades-of-chrome.html" class="">
+          50 Shades of Chrome
+        </a>
+      </li>
+                    <li>
+        <a href="motorcycle-tour-wales.html" class="">
+          Motorcycle Tour, Wales
+        </a>
+      </li>
+                    <li>
+        <a href="techcrunch-disrupt-london.html" class="">
+          Techcrunch Disrupt, London 2015
+        </a>
+      </li>
+                    <li>
+        <a href="back-on-the-snow.html" class="">
+          Back on the Snow
+        </a>
+      </li>
+                    <li>
+        <a href="security-on-the-road.html" class="">
+          Security on the Road
+        </a>
+      </li>
+                    <li>
+        <a href="cukeup-conference-london.html" class="">
+          CukeUp! Conference London
+        </a>
+      </li>
+                    <li>
+        <a href="satnav-and-lights-for-the-bicycle.html" class="">
+          Satnav and lights for the bicycle
+        </a>
+      </li>
+                    <li>
+        <a href="3d-printed-laptop-stand.html" class="">
+          3d Printed Laptop Stand
+        </a>
+      </li>
+                    <li>
+        <a href="strida-folding-bicycle.html" class="">
+          Strida folding bicycle
+        </a>
+      </li>
+                    <li>
+        <a href="sometimes-you-just-cant-decide-whether-to-scoot-or-to-cycle.html" class="">
+          Sometimes you just can't decide, to scoot or to cycle?
+        </a>
+      </li>
+                    <li>
+        <a href="tuscany-and-back-in-a-weekend-by-bike.html" class="">
+          Tuscany and Back in a Weekend... by Bike
+        </a>
+      </li>
+                    <li>
+        <a href="3d-printed-backpack-lacing-router.html" class="">
+          3d Printed Backpack Lacing Organiser
+        </a>
+      </li>
+                    <li>
+        <a href="replacing-land-line-with-voip.html" class="">
+          Replacing land-line with VoIP
+        </a>
+      </li>
+                    <li>
+        <a href="into-the-arctic-circle-norway.html" class="">
+          Biking Into the Arctic Circle, Norway
+        </a>
+      </li>
+                    <li>
+        <a href="skiing-courchevel.html" class="">
+          Skiing Courchevel
+        </a>
+      </li>
+                    <li>
+        <a href="techcrunch-disrupt-london-2017.html" class="">
+          Techcrunch Disrupt, London 2017
+        </a>
+      </li>
+                    <li>
+        <a href="sailing-the-solent.html" class="">
+          Sailing the Solent
+        </a>
+      </li>
+                    <li>
+        <a href="solo-through-the-alps.html" class="">
+          Solo through the Alps
+        </a>
+      </li>
+                    <li>
+        <a href="synology-migration.html" class="">
+          Data Migration
+        </a>
+      </li>
+                    <li>
+        <a href="whistler-canada.html" class="">
+          Whistler, Canada
+        </a>
+      </li>
+                    <li>
+        <a href="better-code-management.html" class="">
+          Better Code Management
+        </a>
+      </li>
+                    <li>
+        <a href="kayaking-royal-docks.html" class="">
+          Kayaking Royal Docks
+        </a>
+      </li>
+                    <li>
+        <a href="reverse-proxying-containers.html" class="">
+          Reverse Proxying Containers
+        </a>
+      </li>
+                    <li>
+        <a href="building-a-kayak-sailing-rig.html" class="">
+          Building a Kayak Sailing Rig
+        </a>
+      </li>
+                    <li>
+        <a href="kayak-sailing-maldon.html" class="">
+          Kayak Sailing, Maldon
+        </a>
+      </li>
+                    <li>
+        <a href="custom-router-firmware.html" class="">
+          Extending WiFi with Custom Router Firmware
+        </a>
+      </li>
+                    <li>
+        <a href="kayak-sailing-isle-of-wight.html" class="">
+          Kayak Sailing, Isle of Wight
+        </a>
+      </li>
+                    <li>
+        <a href="improved-docker-interface.html" class="">
+          Improved Docker Interface
+        </a>
+      </li>
+                    <li>
+        <a href="sailing-in-corfu.html" class="">
+          Sailing Around Corfu
+        </a>
+      </li>
+                    <li>
+        <a href="kayak-sailing-burnham-on-crouch.html" class="">
+          Kayak Sailing, Burnham-on-Crouch
+        </a>
+      </li>
+                    <li>
+        <a href="a-personal-portal.html" class="">
+          A Personal Portal
+        </a>
+      </li>
+                    <li>
+        <a href="val-disere.html" class="">
+          Val d'Isere
+        </a>
+      </li>
+                    <li>
+        <a href="python-udev-rules.html" class="">
+          Python udev Rules
+        </a>
+      </li>
+                    <li>
+        <a href="disaster.html" class="">
+          Disaster
+        </a>
+      </li>
+                    <li>
+        <a href="disaster-recovery.html" class="">
+          Disaster Recovery
+        </a>
+      </li>
+                    <li>
+        <a href="website-revamp.html" class="">
+          Website Revamp
+        </a>
+      </li>
+                    <li>
+        <a href="new-kayak-sailing-rig.html" class="">
+          New Kayak Sailing Rig
+        </a>
+      </li>
+                    <li>
+        <a href="hard-to-soft-kvm.html" class="">
+          Hard to Soft KVM
+        </a>
+      </li>
+                    <li>
+        <a href="book-scanning-with-a-cameraphone.html" class="">
+          Book Scanning With a Camera Phone
+        </a>
+      </li>
+                    <li>
+        <a href="an-open-source-photography-workflow.html" class="active">
+          An Open Source Photography Workflow
+        </a>
+      </li>
+                    <li>
+        <a href="round-the-iow-again.html" class="">
+          Round the IoW Again
+        </a>
+      </li>
+                    <li>
+        <a href="a-better-baby-monitor.html" class="">
+          A Better Baby Monitor
+        </a>
+      </li>
+                    <li>
+        <a href="cheating-at-videography.html" class="">
+          Cheating at Videography
+        </a>
+      </li>
+                    <li>
+        <a href="virtual-android.html" class="">
+          Virtual Android
+        </a>
+      </li>
+                    <li>
+        <a href="the-last-step-to-paperless.html" class="">
+          The Last Step To Paperless
+        </a>
+      </li>
+                    <li>
+        <a href="linux-home-theatre.html" class="">
+          Linux Home Theatre
+        </a>
+      </li>
+                    <li>
+        <a href="all-in-on-lithium.html" class="">
+          All-in on Lithium
+        </a>
+      </li>
+                    <li>
+        <a href="monitoring-baby-on-the-go.html" class="">
+          Monitoring Baby On The Go
+        </a>
+      </li>
+                    <li>
+        <a href="big-data-and-ai-world-2020.html" class="">
+          Big Data & AI World 2020
+        </a>
+      </li>
+                    <li>
+        <a href="backporting-portal-updates.html" class="">
+          Backporting Portal Updates
+        </a>
+      </li>
+                    <li>
+        <a href="having-your-pi-and-eating-it.html" class="">
+          Having your Pi and Eating It
+        </a>
+      </li>
+                    <li>
+        <a href="controlling-brightness-with-ddc-ci.html" class="">
+          Controlling Brightness with DDC/CI
+        </a>
+      </li>
+                    <li>
+        <a href="apple-airplay-on-a-raspberry-pi.html" class="">
+          Apple Airplay Screen Mirroring on a Raspberry Pi
+        </a>
+      </li>
+                    <li>
+        <a href="an-improvised-webcam.html" class="">
+          An Improvised Webcam
+        </a>
+      </li>
+      
+        </ul>
+      </li>
+                    <li>
+        <a href="about-me.html" class="">
+          About Me
+        </a>
+      </li>
+      
+</ul>
+
+            </nav>
+        </div>
+    </div>
+
+    <script src="user/themes/myblog/js/jquery.treemenu.js"></script>
+<script src="user/themes/myblog/js/site.js"></script>
+
+
+</body>
+
+<!-- Mirrored from blog.lan/an-open-source-photography-workflow by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Apr 2020 22:54:38 GMT -->
+</html>
