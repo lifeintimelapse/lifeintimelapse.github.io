@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>blog</title>
+        <link>https://lifeintimelapse.github.io/lifeintimelapse.rss</link>
+        <description>My Feed Description</description>
+        <language>en-us</language>
+        <atom:link href="https://lifeintimelapse.github.io/lifeintimelapse.rss" rel="self" type="application/rss+xml"/>
+                        <item>
+            <title>An Improvised Webcam</title>
+            <link>https://lifeintimelapse.github.io/an-improvised-webcam</link>
+            <description>
+                <![CDATA[
+                                <img alt="" src="https://lifeintimelapse.github.io/images/1/f/5/a/0/1f5a05f14dd60db0cd763ee0a5a96b0faca4a889-20200417-170555v1.jpeg" srcset="https://lifeintimelapse.github.io/images/d/7/9/4/c/d794c4765b39742c5a150fdf90fb1560ce4d67b8-20200417-170555v12x.jpeg 1000w, https://lifeintimelapse.github.io/images/3/7/d/1/f/37d1f68de83f37351a4d2ba8d67f8f41bcece93f-20200417-170555v13x.jpeg 1500w, https://lifeintimelapse.github.io/images/b/3/6/4/d/b364d274635086b7074498bcbcdaa6946c4c9045-20200417-170555v14x.jpeg 2500w, https://lifeintimelapse.github.io/images/8/b/f/6/3/8bf6328dd41e80c07c10dc3b5a4ce1bb85833157-20200417-170555v15x.jpeg 3500w, https://lifeintimelapse.github.io/images/0/2/4/d/a/024dac649e160dd981be078633e45b03c5cfe9ef-20200417-170555v16x.jpeg 5312w, https://lifeintimelapse.github.io/images/1/f/5/a/0/1f5a05f14dd60db0cd763ee0a5a96b0faca4a889-20200417-170555v1.jpeg 640w" sizes="100vw" />
+                                <p>When I want to show a video chat on the big screen I tend to <a href="https://lifeintimelapse.github.io/apple-airplay-on-a-raspberry-pi">use a mobile device and cast the picture to the TV</a>. It did occur to me though that it might be useful to have the capability to call directly from the <a href="https://lifeintimelapse.github.io/linux-home-theatre">home theatre PC under the TV</a>. I don't want to buy a separate webcam for this niche use-case though, so I started thinking about ways to re-purpose other devices. My phone has two good cameras in it, could I use those?</p>
+<p>As it turns out, yes; there are multiple apps on the Play Store that will allow an Android phone to be used as a webcam. After a bit of testing I settled on <a href="https://play.google.com/store/apps/details?id=com.pas.webcam.pro&amp;hl=en_GB">IP Webcam Pro</a>, which was well reviewed. It also supports using the Android device's microphone.</p>
+<p>It works quite well as a compromise solution, although I'm glad I'm not using it often. There's just a little bit of manual setup on the phone and PC side which means it's a bit more faff than simply plugging in a webcam. Still, always good to have options.</p>
+<figure class="image-caption"><img title="IP Webcam Pro web interface for testing" alt="" class="caption" src="https://lifeintimelapse.github.io/images/a/3/6/a/7/a36a7747cb6221aaffc36d335a48446503bc4589-screenshot20200420154929.png" srcset="https://lifeintimelapse.github.io/images/3/a/9/d/1/3a9d10e966e8ccb1ea7e66ef24da69163e5070e0-screenshot202004201549292x.png 1000w, https://lifeintimelapse.github.io/images/2/1/a/6/b/21a6be2b283551e8a78285512f4a6f64b3b8f842-screenshot202004201549293x.png 1251w, https://lifeintimelapse.github.io/images/a/3/6/a/7/a36a7747cb6221aaffc36d335a48446503bc4589-screenshot20200420154929.png 640w" sizes="100vw"><figcaption class="">IP Webcam Pro web interface for testing</figcaption></figure><figure class="image-caption"><img title="Setting up a Zoom meeting on the TV with phone as webcam" alt="" class="caption" src="https://lifeintimelapse.github.io/images/2/0/b/1/b/20b1bd0ad04d5c6d697c32b24d5e56953feb0777-20200417-170555v1.jpeg" srcset="https://lifeintimelapse.github.io/images/f/7/f/1/c/f7f1c8c352793680acd14a3efc190ed526e215ff-20200417-170555v12x.jpeg 1000w, https://lifeintimelapse.github.io/images/5/f/2/c/7/5f2c7c8079fb075bcb03c17a6ae8a86fb8fc94e0-20200417-170555v13x.jpeg 1500w, https://lifeintimelapse.github.io/images/4/7/7/f/2/477f234e8a0b65f602cb433c421c94fbdc356745-20200417-170555v14x.jpeg 2500w, https://lifeintimelapse.github.io/images/f/8/1/1/6/f8116ea09ef621f8720036b300dafed004252c60-20200417-170555v15x.jpeg 3500w, https://lifeintimelapse.github.io/images/2/7/4/2/6/27426335cdde5df649fe967ffcfaf3f628dab63e-20200417-170555v16x.jpeg 5312w, https://lifeintimelapse.github.io/images/2/0/b/1/b/20b1bd0ad04d5c6d697c32b24d5e56953feb0777-20200417-170555v1.jpeg 640w" sizes="100vw"><figcaption class="">Setting up a Zoom meeting on the TV with phone as webcam</figcaption></figure>
+To start the webcam, open the app and click on Start Server.<figure class="image-caption"><img title="IP Webcam Pro on Android" alt="" class="caption" src="https://lifeintimelapse.github.io/images/0/1/7/c/e/017cef96003f973c3e46e2a235bfa18b0ba5220e-ipwebcampro.png" srcset="https://lifeintimelapse.github.io/images/f/3/1/3/0/f313000c4db09e3d00f972171a3b19d170d93474-ipwebcampro2x.png 2560w, https://lifeintimelapse.github.io/images/0/1/7/c/e/017cef96003f973c3e46e2a235bfa18b0ba5220e-ipwebcampro.png 640w" sizes="100vw"><figcaption class="">IP Webcam Pro on Android</figcaption></figure><p>You will see the image from the camera and the address of the webcam on the local network. To connect to the webcam, we need to connect from our Linux client using <a href="https://github.com/bluezio/ipwebcam-gst/">ipwebcam-gst</a>. This is simply a script to install and configure the necessary packages and setup the dummy video device that will relay the live video feed from the phone. Clone the repo and start the script to connect. You will need to modify the lines with the IP address and port to match your phone. I also set the stream dimensions to 720p.</p>
+<pre><code>...
+# IP used by the phone in your wireless network
+WIFI_IP=192.168.1.61
+
+# Port on which IP Webcam is listening
+PORT=8090
+
+# To disable proxy while acessing WIFI_IP (set value 1 to disable, 0 for not)
+# For cases when host m/c is connected to a Proxy-Server and WIFI_IP belongs to local network
+DISABLE_PROXY=0
+
+# Dimensions of video
+WIDTH=1280
+HEIGHT=720
+...</code></pre>
+<p>I also commented out the kernel module and gstreamer package install checks as they were unnecessary on my system and failed. Lastly I added a line to cleanup any leftover adb processes at the end of a run, as these prevented subsequent runs (I don't bother with ADB any longer anyway, connection over WiFi seems to perform well).</p>
+<pre><code>...
+#       if [
+#      `find /lib/modules/$(uname -r)/ -name "$MODULE.ko.*" | egrep '.*' ||
+             #       find /lib/modules/$(uname -r)/extra -name "$MODULE.ko.*" | egrep '.*'` ]; then
+         return 0
+#        else
+#        return 1
+#       fi
+#    fi
+...
+# if find "/usr/lib/gstreamer-$GST_VER/libgstpulseaudio.so" "/usr/lib/gstreamer-$GST_VER/libgstpulse.so" "/usr/lib/$(uname -m)-linux-gnu/gstreamer-$GST_VER/libgstpulse.so" 2&gt;/dev/null | eg
+rep -q '.*'; then
+#     # plugin installed, do nothing
+#     # info "Found the...</code></pre>
+                ]]>
+            </description>
+            <category>IT</category>
+            <guid>https://lifeintimelapse.github.io/an-improvised-webcam</guid>
+            <pubDate>Sun, 12 Apr 2020 20:00:00 +0100</pubDate>
+        </item>
+                        <item>
+            <title>Apple Airplay Screen Mirroring on a Raspberry Pi</title>
+            <link>https://lifeintimelapse.github.io/apple-airplay-on-a-raspberry-pi</link>
+            <description>
+                <![CDATA[
+                                <img alt="" src="https://lifeintimelapse.github.io/images/f/4/9/0/e/f490e3430424f7d3addec4eda8a69c49cf811f7a-20200417-164829.jpeg" srcset="https://lifeintimelapse.github.io/images/c/b/c/e/1/cbce1b97df5a83733524192ae6f1744d2d205379-20200417-1648292x.jpeg 1000w, https://lifeintimelapse.github.io/images/f/9/b/2/1/f9b2127540bb613332471cd68015df78c9e77efb-20200417-1648293x.jpeg 1500w, https://lifeintimelapse.github.io/images/f/b/6/5/c/fb65c30c507378d436e2acd054c154148eee032a-20200417-1648294x.jpeg 2500w, https://lifeintimelapse.github.io/images/7/3/4/1/0/73410706c2ef0ca07dd6200569c0561713a86b83-20200417-1648295x.jpeg 3500w, https://lifeintimelapse.github.io/images/7/c/6/a/a/7c6aaf38405984d7caa312ace3f797b0294a56f3-20200417-1648296x.jpeg 5312w, https://lifeintimelapse.github.io/images/f/4/9/0/e/f490e3430424f7d3addec4eda8a69c49cf811f7a-20200417-164829.jpeg 640w" sizes="100vw" />
+                                <p>Until the coronavirus lockdown, video calling wasn't something I used a great deal. Although I have multiple devices with a built-in webcam, I've rarely used one after my initial interest in the technology subsided. At work I don't really see the value-add over voice calls or instant messaging; if anything video seems an additional bother for no added benefit (although screen-sharing is very useful). Since the UK lockdown everything's changed; now I'm hosting multiple video calls a day and the sensation of closer contact is welcome.</p>
+<p>This more frequent use now makes it feel worth the time to make video calling really seamless and make best use of the equipment I have available. I want to be able to use the 50" TV in the living room or 27" monitor in the study, but still be free to roam around the house mid-call. The solution is to make and receive calls on mobile devices and wirelessly cast to the larger screens when desired. With my Android phone that's easy, most current Android devices support Miracast and the TV has receiver support built-in. A Roku, Fire TV stick or dedicated device such as a PTV3000 will work with a monitor.</p>
+<p>I tend to use the iPad more though because of the larger screen. Unfortunately the iPad is more restrictive*; casting is supported through Apple's AirPlay, but only between Apple devices. We used to have an Apple TV, but sold it on Ebay because we found we weren't really using it. A Raspberry Pi comes in useful again here. The open source project <a href="https://github.com/FD-/RPiPlay">RPiPlay</a> describes itself as "An open-source implementation of an AirPlay mirroring server for the Raspberry Pi". As I only really use my Pi away from home it's sitting idle right now. I thought I'd give RPiPlay a whirl.</p>
+<p>It works very well indeed (better in fact than the Apple TV, by my recollection). So far I've tested with Zoom and Facebook Messenger and quality is excellent. I did have one issue where the video would freeze at random, but this was fixed by enabling low-latency mode, with no side-effects that I've noticed.</p>
+<p><video controls="1" title="Casting from an iPad to RPiPlay to host a Zoom meeting" alt="" class="caption"><source src="https://lifeintimelapse.github.io/user/pages/01.blog/71.apple-airplay-on-a-raspberry-pi/rpiplay-nodetails-nosound-small.mp4?fixOrientation">Your browser does not support the video tag.</video></p>
+<p>I have RPiPlay setup to start on boot with the following launcher in .config/autostart/RPiPlay2.desktop:</p>
+<pre><code>[Desktop Entry]
+Exec=qterminal -e \\"bash -c /home/raspex/dev/RPiPlay/start-rpiplay.sh\\" -w /home/raspex/dev/RPiPlay/build
+Name=RPiPlay
+OnlyShowIn=LXQt;
+Type=Application
+Version=1.0
+X-LXQt-Need-Tray=true</code></pre>
+<p>The script start-rpiplay.sh:</p>
+<pre><code>#!/bin/bash
+
+cd /home/raspex/dev/RPiPlay/build
+./rpiplay  -n PiPlay -b auto -a hdmi -l</code></pre>
+<p>The service sits and waits for a connection, so there's no need to do anything before connecting - just switch the TV to the correct input for the Pi and connect your iPad.</p>
+<p>* UPDATE: I'm told Amazon Fire TV devices can receive Airplay casts, by way of an app.</p>
+                ]]>
+            </description>
+            <category>smarthome,it</category>
+            <guid>https://lifeintimelapse.github.io/apple-airplay-on-a-raspberry-pi</guid>
+            <pubDate>Sun, 05 Apr 2020 00:16:00 +0100</pubDate>
+        </item>
+                        <item>
+            <title>Controlling Brightness with DDC/CI</title>
+            <link>https://lifeintimelapse.github.io/controlling-brightness-with-ddc-ci</link>
+            <description>
+                <![CDATA[
+                                <img alt="" src="https://lifeintimelapse.github.io/images/b/4/9/b/b/b49bb6449b31563bc1fff0ce1da03fd8670b3f66-screenshot20200420004743.png" srcset="https://lifeintimelapse.github.io/images/4/c/c/c/e/4ccced59aae3f9006f11a89364d00af55ba44acb-screenshot202004200047432x.png 1000w, https://lifeintimelapse.github.io/images/8/7/5/0/4/875046c5d92fbdb8d11606c172f9ff06fb8556d8-screenshot202004200047433x.png 1500w, https://lifeintimelapse.github.io/images/0/5/b/5/1/05b51729dc1da0313b0c421c18d12f5057b5f244-screenshot202004200047434x.png 1920w, https://lifeintimelapse.github.io/images/b/4/9/b/b/b49bb6449b31563bc1fff0ce1da03fd8670b3f66-screenshot20200420004743.png 640w" sizes="100vw" />
+                                <p>My monitors are colour calibrated using a colorimeter for photographic work, which requires the monitor brightness to be set at a specific level for colour accuracy. During general use in the evenings however I always lower the brightness to avoid eye strain. On laptops this is easy, as you can simply use the brightness keys. But many monitors make this cumbersome, with a slow, clunky interface. As I find myself performing this task twice daily it's a good candidate for automation. </p>
+<p>The Display Data Channel Control Interface makes this quite straightforward on Linux using the ddcontrol command. I have one script to set the monitor brightness up to my preferred daytime/photography level and another to turn it down at night. The laptop screen is controlled from the same script using the KDE Plasma desktop's dbus power management controls, so the same scripts control both screens.</p>
+<p>The external display device identifier can be found using <code>sudo i2cdetect -l</code> </p>
+<pre><code>#!/bin/bash
+
+qdbus org.kde.Solid.PowerManagement /org/kde/Solid/PowerManagement/Actions/BrightnessControl setBrightness 49
+pkexec ddccontrol dev:/dev/i2c-5 -r 0x10 -w 23</code></pre>
+<pre><code>#!/bin/bash
+
+qdbus org.kde.Solid.PowerManagement /org/kde/Solid/PowerManagement/Actions/BrightnessControl setBrightness 27
+pkexec ddccontrol dev:/dev/i2c-5 -r 0x10 -w 8</code></pre>
+<p>I've added two shortcuts to the top panel so that these scripts can be executed with a click. </p>
+<p><img alt="" src="https://lifeintimelapse.github.io/images/e/b/6/c/2/eb6c26987a1f7a6ebfe197212dafc8661798a53f-screenshot20200420004743.png" srcset="https://lifeintimelapse.github.io/images/0/5/c/2/d/05c2dd95a0b7182b3f47d5702300cf0b8de6a19b-screenshot202004200047432x.png 1000w, https://lifeintimelapse.github.io/images/4/7/8/6/6/47866d490723f6783d8fd86ae32c7f46f7451d87-screenshot202004200047433x.png 1500w, https://lifeintimelapse.github.io/images/b/4/b/3/1/b4b31d996af9cc7a3d6178f890f968fdd850a8b9-screenshot202004200047434x.png 1920w, https://lifeintimelapse.github.io/images/e/b/6/c/2/eb6c26987a1f7a6ebfe197212dafc8661798a53f-screenshot20200420004743.png 640w" sizes="100vw" /></p>
+                ]]>
+            </description>
+            <category>IT</category>
+            <guid>https://lifeintimelapse.github.io/controlling-brightness-with-ddc-ci</guid>
+            <pubDate>Mon, 30 Mar 2020 12:23:00 +0100</pubDate>
+        </item>
+                        <item>
+            <title>Having your Pi and Eating It</title>
+            <link>https://lifeintimelapse.github.io/having-your-pi-and-eating-it</link>
+            <description>
+                <![CDATA[
+                                <img alt="" src="https://lifeintimelapse.github.io/images/9/c/2/4/b/9c24bcc48141864068df227811868b92cffbfdc5-20200417-170826v1.jpeg" srcset="https://lifeintimelapse.github.io/images/b/c/8/a/8/bc8a8daea6118a08498ec1cfaf79ad3534e1bd72-20200417-170826v12x.jpeg 1000w, https://lifeintimelapse.github.io/images/4/0/3/a/7/403a7e4c15deac81ff68a0ab87504334a6ce149b-20200417-170826v13x.jpeg 1500w, https://lifeintimelapse.github.io/images/f/4/c/c/9/f4cc9588f02d0769336961b11bd5da0974fa7c69-20200417-170826v14x.jpeg 2500w, https://lifeintimelapse.github.io/images/8/5/0/d/f/850df053699fb3856b86c67f92ca18e6e543ab24-20200417-170826v15x.jpeg 3500w, https://lifeintimelapse.github.io/images/9/c/9/4/a/9c94a90c489cff79479f80659a94afbc638fca93-20200417-170826v16x.jpeg 5312w, https://lifeintimelapse.github.io/images/9/c/2/4/b/9c24bcc48141864068df227811868b92cffbfdc5-20200417-170826v1.jpeg 640w" sizes="100vw" />
+                                <p>In <a href="https://lifeintimelapse.github.io/monitoring-baby-on-the-go">Monitoring Baby On The Go</a> I mentioned that it would be easier if I were able to connect the Raspberry Pi to new WiFi networks through a web browser. Then I could leave my travel router behind and just use a browser to configure the new network connection on the Pi, without logging in through VNC.</p>
+<p>It didn't take long on Google to find <a href="https://github.com/billz/raspap-webgui">RaspAP</a>. This is a software stack for the Pi that effectively turns it into a travel router itself. It configures a hotspot on the Pi's WiFi and a Lighttpd web server that hosts a network configuration portal for the Pi. You can then log on to the portal and configure network access. By default RaspAP bridges the WiFi interface to ethernet. However, when you are travelling you will not find many hotels that offer wired connections, so I wanted to bridge the WiFi hotspot to a second WiFi interface I would provide through a USB dongle. The RaspAP Wiki and forums reveal that this is possible, albeit not supported.</p>
+<p>RaspAP is a great idea and the project is off to a good start, but my impression is that it is still alpha quality (to be fair I am aiming for a use-case that isn't officially supported yet). After testing it out for a while, I concluded that the best approach was to edit the configuration files manually rather than through the web portal and once I had it working to use the portal just for monitoring and adding new WiFi networks. </p>
+<figure class="image-caption"><img title="Configuring client Wi-Fi connections using RaspAP" alt="" class="caption" src="https://lifeintimelapse.github.io/images/6/1/0/1/c/6101c1892740cebca0d549fed15981f0fffbc239-screenshot20200420004302.png" srcset="https://lifeintimelapse.github.io/images/c/b/d/4/a/cbd4a5cc5a057045877bfb254cc31cfd0486d048-screenshot202004200043022x.png 1000w, https://lifeintimelapse.github.io/images/3/1/c/3/e/31c3e6f0aeda1ad62a9e77bc2114da5f5145dd2e-screenshot202004200043023x.png 1500w, https://lifeintimelapse.github.io/images/1/b/d/8/2/1bd826afacdfce5754a2e0898fe5b9984243208a-screenshot202004200043024x.png 1589w, https://lifeintimelapse.github.io/images/6/1/0/1/c/6101c1892740cebca0d549fed15981f0fffbc239-screenshot20200420004302.png 640w" sizes="100vw"><figcaption class="">Configuring client Wi-Fi connections using RaspAP</figcaption></figure><p>Here's the configuration that worked for me. DHCPCD/HostAPD together control wlan0, with the internal WiFi used as the hotspot.</p>
+<p>/etc/dhcdcp.conf</p>
+<pre><code># RaspAP wlan0 configuration
+hostname
+clientid
+persistent
+option rapid_commit
+option domain_name_servers, domain_name, domain_search, host_name
+option classless_static_routes
+option ntp_servers
+require dhcp_server_identifier
+slaac private
+nohook lookup-hostname
+interface wlan0
+env ifwireless=1
+env wpa_supplicant_driver=wext
+static ip_address=192.168.10.1/24
+static routers=192.168.10.1
+static domain_name_server=1.1.1.1 8.8.8.8</code></pre>
+<p>/etc/hostapd/hostapd.conf</p>
+<pre><code>driver=nl80211
+ctrl_interface=/var/run/hostapd
+ctrl_interface_group=0
+auth_algs=1
+wpa_key_mgmt=WPA-PSK
+beacon_int=100
+ssid=APNET-PI
+channel=1
+hw_mode=g
+ieee80211n=0
+wpa_passphrase=XXXXXXXX
+interface=wlan0
+wpa=2
+wpa_pairwise=CCMP
+country_code=GB
+ignore_broadcast_ssid=0</code></pre>
+<p>The RaspAP portal scans for WiFi networks and connects, using wlan1, by issuing commands to WPA Supplicant. Currently only my home network is configured, others can be added using the web GUI.</p>
+<p>/etc/wpa_supplicant/wpa_supplicant.conf</p>
+<pre><code>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network={
+        ssid="APNETN"
+        #psk="XXXXXXXX"
+        psk=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+}</code></pre>
+<p>Configure RaspAP to use wlan1 for the client connection.</p>
+<p>/var/www/html/includes/config.php</p>
+<pre><code>...
+define('RASPI_WIFI_CLIENT_INTERFACE', 'wlan1');
+...</code></pre>
+<p>With my dongle, an Asus N10, a little extra configuration was necessary. The driver only loaded when the dongle was plugged in after startup. To make the dongle functional immediately at boot time, we need to ensure the necessary module is loaded into the kernel by adding the following line to /etc/modules:</p>
+<pre><code>r8712u</code></pre>
+<p>I also had to change the default service for WPA Supplicant to use the 'wext' driver instead of the default. This involved copying the default file at /lib/systemd/system/wpa_supplicant.service to /etc/systemd/system/wpa_supplicant.service and ammending it as follows:</p>
+<pre><code>[Unit]
+Description=WPA supplicant
+Before=network.target
+After=dbus.service
+Wants=network.target
+
+[Service]
+Type=dbus
+BusName=fi.w1.wpa_supplicant1
+#ExecStart=/sbin/wpa_supplicant -Dwext -u -s -O /run/wpa_supplicant
+ExecStart=/sbin/wpa_supplicant -u -s -i wlan1...</code></pre>
+                ]]>
+            </description>
+            <category>smarthome,it</category>
+            <guid>https://lifeintimelapse.github.io/having-your-pi-and-eating-it</guid>
+            <pubDate>Sun, 22 Mar 2020 17:55:00 +0000</pubDate>
+        </item>
+                        <item>
+            <title>Backporting Portal Updates</title>
+            <link>https://lifeintimelapse.github.io/backporting-portal-updates</link>
+            <description>
+                <![CDATA[
+                                <img alt="" src="https://lifeintimelapse.github.io/images/b/2/2/0/7/b2207a8d397beb6cb87f6e5d727135234d205de4-screenshot20200420155505.png" srcset="https://lifeintimelapse.github.io/images/a/7/5/6/7/a7567874e2f544baf0ae7214256c72982214aa69-screenshot202004201555052x.png 1000w, https://lifeintimelapse.github.io/images/c/1/2/d/e/c12dec6d2b3c4123ceaf844ef65d4706f17282c5-screenshot202004201555053x.png 1500w, https://lifeintimelapse.github.io/images/5/0/2/d/8/502d8e760006cc6917d1e80c03fd286d23229f0b-screenshot202004201555054x.png 1673w, https://lifeintimelapse.github.io/images/b/2/2/0/7/b2207a8d397beb6cb87f6e5d727135234d205de4-screenshot20200420155505.png 640w" sizes="100vw" />
+                                <p>Launchbot, the start-page project that my <a href="https://lifeintimelapse.github.io/a-personal-portal">personal portal</a> is based on, recently released version 3. This release includes a settings page, so that sites can be added without editing the source, a feature that was sorely lacking in v1. </p>
+<p>However I've forked and modified the original project substantially so it would not be a straightforward rebase and merge. Also v3 has moved from a very simple project structure to an NPM/Webpack setup, something that I did not want in my version. For such a small project it seems like overkill and I like that I can pull my existing code repo and update anywhere without an npm install.</p>
+<p>Rather than pull and merge v3 then, I opted to backport the settings feature by hand. It's quite a simple feature that could be brought in in one additional HTML and counterpart javascript file. I also added a bit of code to support my custom icon enhancement and presto, I am now able to add sites and icons without modifying the source. </p>
+<figure class="image-caption"><img title="Portal settings page with drag-drop or file-browser icon upload" alt="" class="caption" src="https://lifeintimelapse.github.io/images/d/1/8/7/9/d187900467ff2aa146451ca1e0e0a072a27c2614-screenshot20200427022344.png" srcset="https://lifeintimelapse.github.io/images/2/8/a/6/9/28a69e84fa21b0bff328318e50c634a10b68cfb7-screenshot202004270223442x.png 1410w, https://lifeintimelapse.github.io/images/d/1/8/7/9/d187900467ff2aa146451ca1e0e0a072a27c2614-screenshot20200427022344.png 640w" sizes="100vw"><figcaption class="">Portal settings page with drag-drop or file-browser icon upload</figcaption></figure>
+                ]]>
+            </description>
+            <category>IT</category>
+            <guid>https://lifeintimelapse.github.io/backporting-portal-updates</guid>
+            <pubDate>Sun, 15 Mar 2020 19:48:00 +0000</pubDate>
+        </item>
+                        <item>
+            <title>Big Data &amp; AI World 2020</title>
+            <link>https://lifeintimelapse.github.io/big-data-and-ai-world-2020</link>
+            <description>
+                <![CDATA[
+                                <img alt="" src="https://lifeintimelapse.github.io/images/e/6/4/1/1/e64116bab535f76b7368e98a300fe9b54ada8f4c-bigdata.jpeg" srcset="https://lifeintimelapse.github.io/images/9/1/5/0/4/91504eb5e8dc174850889371cfe4659a0831512e-bigdata2x.jpeg 870w, https://lifeintimelapse.github.io/images/e/6/4/1/1/e64116bab535f76b7368e98a300fe9b54ada8f4c-bigdata.jpeg 640w" sizes="100vw" />
+                                <p>Sadly I've decided to give it a miss this year. I registered for my tickets early and was still dithering over my itinerary for the talks right up to last night - there are a lot of interesting speakers to choose between. However with an epidemic looking like it's descending on the UK (and especially London) it just didn't seem a sensible time to venture out to a large conference venue. </p>
+<p>I've spoken with a former colleague who did decide to risk it, apparently the Excel centre was a bit of a ghost town, so it seems I'm not the only one.</p>
+<p><img alt="" src="https://lifeintimelapse.github.io/images/9/3/8/3/a/9383a1126341a61252b131d4b9856e06fea778a6-bigdata.jpeg" srcset="https://lifeintimelapse.github.io/images/c/c/a/0/3/cca03e34f4b610089f60dd7b2ce88a272492beaf-bigdata2x.jpeg 870w, https://lifeintimelapse.github.io/images/9/3/8/3/a/9383a1126341a61252b131d4b9856e06fea778a6-bigdata.jpeg 640w" sizes="100vw" /></p>
+                ]]>
+            </description>
+            <category>IT,conference,datascience,bigdata</category>
+            <guid>https://lifeintimelapse.github.io/big-data-and-ai-world-2020</guid>
+            <pubDate>Wed, 11 Mar 2020 20:34:00 +0000</pubDate>
+        </item>
+                        <item>
+            <title>Monitoring Baby On The Go</title>
+            <link>https://lifeintimelapse.github.io/monitoring-baby-on-the-go</link>
+            <description>
+                <![CDATA[
+                                <img alt="" src="https://lifeintimelapse.github.io/images/4/7/0/d/d/470dd08fe80867e6c82794154703c98560135a87-20200417-173957.jpeg" srcset="https://lifeintimelapse.github.io/images/6/9/3/c/c/693cc0afbf4d85dd2e1265367a39693b21d01c13-20200417-1739572x.jpeg 1000w, https://lifeintimelapse.github.io/images/6/b/e/a/4/6bea41ed9c4640e265f39d1eece95f6a90bb3225-20200417-1739573x.jpeg 1500w, https://lifeintimelapse.github.io/images/a/5/2/2/e/a522e0fceb6b2bf5506bda4245a844e26f902dfe-20200417-1739574x.jpeg 2500w, https://lifeintimelapse.github.io/images/8/d/5/7/c/8d57cf22eeacb7864aebf36bfa87d7d1fb25ef29-20200417-1739575x.jpeg 3500w, https://lifeintimelapse.github.io/images/c/a/0/5/1/ca051bf7b10ebc063c2ec036dfc53c7bdc075e6a-20200417-1739576x.jpeg 5312w, https://lifeintimelapse.github.io/images/4/7/0/d/d/470dd08fe80867e6c82794154703c98560135a87-20200417-173957.jpeg 640w" sizes="100vw" />
+                                <p>As discussed in my ealier post <a href="https://lifeintimelapse.github.io/a-better-baby-monitor">A Better Baby Monitor</a>, we're now using Gonimo to keep an eye on Tiny at home. On the road we've been using our phones (one stays in the bedroom as a monitor, the other we carry with us as a viewer). This works OK for audio only or during the daytime where there's a fair bit of ambient light in the room, but there's no video feed at night. The infrared camera on the main unit is small enough to take with us when we travel, but the netbook with charger is quite bulky.</p>
+<p>Raspberry Pi to the rescue! We can use the same USB IR camera and I added a small USB microphone to provide audio. The setup on the Pi is almost identical to the netbook - an LXQT desktop with the Chrome Browser/Gonimo set to start automatically. The only difference with the Pi is that I don't put it to sleep between naps (there's no power button to start it up again) and it's headless. </p>
+<p>To manage the Pi I have to log in via VNC. There are only 2 tasks I need to perform, joining local WiFi and start/stop of the monitor. There's a chicken and egg problem here though; to connect to the Pi through VNC, it needs to be joined to the network. And while VNC is fine, it's a bit fiddly on a phone which is often all I have with me. So far my solution is to always bring my travel router and daisy chain the Pi through that (the router can be configured in a browser). I may try to find a way to control the Pi from a browser at some point in the future.</p>
+<figure class="image-caption"><img title="Raspberry Pi with microphone connected to the travel router" alt="" class="caption" src="https://lifeintimelapse.github.io/images/5/7/8/5/6/57856b86f37d4a4bfebf90c18037202430dc5979-20200417-173957.jpeg" srcset="https://lifeintimelapse.github.io/images/6/5/b/4/8/65b4862b50a9f906d7c629ee66dd9cfa92b5249f-20200417-1739572x.jpeg 1000w, https://lifeintimelapse.github.io/images/d/0/6/0/2/d060221ecf50447ae16f3452858c8dd35dc4530f-20200417-1739573x.jpeg 1500w, https://lifeintimelapse.github.io/images/c/c/7/4/9/cc74913786872c14bcb80c87d352619b70ebe7e4-20200417-1739574x.jpeg 2500w, https://lifeintimelapse.github.io/images/b/1/e/2/2/b1e2244e7b25bfc886212cea33bb2edd4a2caea2-20200417-1739575x.jpeg 3500w, https://lifeintimelapse.github.io/images/f/d/a/a/1/fdaa1817a99363cc74f25b08a0f5fd92a2b8fcd6-20200417-1739576x.jpeg 5312w, https://lifeintimelapse.github.io/images/5/7/8/5/6/57856b86f37d4a4bfebf90c18037202430dc5979-20200417-173957.jpeg 640w" sizes="100vw"><figcaption class="">Raspberry Pi with microphone connected to the travel router</figcaption></figure><figure class="image-caption"><img title="Configuring Gonimo over VNC" alt="" class="caption" src="https://lifeintimelapse.github.io/images/b/e/0/e/6/be0e69585d51d0f293ba2b55540d95936ee68955-screenshot20200420003631.png" srcset="https://lifeintimelapse.github.io/images/b/a/a/4/8/baa48d8334c040673d02036054ae13641c4a36a2-screenshot202004200036312x.png 1000w, https://lifeintimelapse.github.io/images/4/b/a/8/e/4ba8e624a736da9d66f7d46b79219d37588fd84b-screenshot202004200036313x.png 1500w, https://lifeintimelapse.github.io/images/e/1/7/e/1/e17e10ce926da0d320894c293253890af5b955d0-screenshot202004200036314x.png 1954w, https://lifeintimelapse.github.io/images/b/e/0/e/6/be0e69585d51d0f293ba2b55540d95936ee68955-screenshot20200420003631.png 640w" sizes="100vw"><figcaption class="">Configuring Gonimo over VNC</figcaption></figure>
+                ]]>
+            </description>
+            <category>IT,smarthome</category>
+            <guid>https://lifeintimelapse.github.io/monitoring-baby-on-the-go</guid>
+            <pubDate>Sun, 01 Mar 2020 22:51:00 +0000</pubDate>
+        </item>
+                        <item>
+            <title>All-in on Lithium</title>
+            <link>https://lifeintimelapse.github.io/all-in-on-lithium</link>
+            <description>
+                <![CDATA[
+                                <img alt="" src="https://lifeintimelapse.github.io/images/9/f/7/8/a/9f78a11a93887b70bae9fa15abced6bdfb8ef8f1-img20200420002301.jpeg" srcset="https://lifeintimelapse.github.io/images/4/f/2/d/d/4f2ddd1fd7dd046c9b4648efef6a18d37dce5719-img202004200023012x.jpeg 1000w, https://lifeintimelapse.github.io/images/b/a/f/6/9/baf69fcda27cc2ca3734a0de8ad37ba2396a7a2f-img202004200023013x.jpeg 1500w, https://lifeintimelapse.github.io/images/c/6/5/2/a/c652aa48d6a07e160c6819c333a2fa80f4c8d1ef-img202004200023014x.jpeg 2500w, https://lifeintimelapse.github.io/images/5/1/a/b/0/51ab0027050f7463ad177b5ddb145b05dc96d120-img202004200023015x.jpeg 3500w, https://lifeintimelapse.github.io/images/2/f/f/8/1/2ff814ca6e2326d138bb21911581e0edc6ad111c-img202004200023016x.jpeg 5312w, https://lifeintimelapse.github.io/images/9/f/7/8/a/9f78a11a93887b70bae9fa15abced6bdfb8ef8f1-img20200420002301.jpeg 640w" sizes="100vw" />
+                                <p>My motorcycle batteries tend to suffer over the winter. I'm an all-weather rider, but this year has been busy and there have been long periods of a month or more when the bike has been left idle. When it came time for a trip a fortnight ago, she simply wouldn't start. A night left on the battery tender yielded a few more cranks but didn't get her started, and it was clearly time for a new battery. This one's lasted 7 years from new, so not bad going.</p>
+<p><img alt="" src="https://lifeintimelapse.github.io/images/7/9/a/c/d/79acd1d1660b95d6f38b9a5b6b6cfe48d04a4db6-20200319-150913.jpeg" srcset="https://lifeintimelapse.github.io/images/7/f/2/9/a/7f29ad2bdf3a852a946d54d60243d1f262a903d5-20200319-1509132x.jpeg 1000w, https://lifeintimelapse.github.io/images/2/4/f/4/e/24f4e2fd7f01344c003aeac3371ca2d62548e25b-20200319-1509133x.jpeg 1500w, https://lifeintimelapse.github.io/images/d/5/7/8/b/d578bd8b38f2697396cdbac55be1d107bebb1a59-20200319-1509134x.jpeg 2500w, https://lifeintimelapse.github.io/images/c/2/f/a/8/c2fa8507c1e8388e978f269f148f6f32984d372d-20200319-1509135x.jpeg 3500w, https://lifeintimelapse.github.io/images/0/4/7/5/1/0475142b62cff945aebc02c2ec6f16707943dccd-20200319-1509136x.jpeg 5312w, https://lifeintimelapse.github.io/images/7/9/a/c/d/79acd1d1660b95d6f38b9a5b6b6cfe48d04a4db6-20200319-150913.jpeg 640w" sizes="100vw"></p>
+<p>At first I was minded to go like-for-like, and source an identical lead-acid replacement. I noticed though that Lithium batteries were topping my search results, so I started checking the biker forums and found rave reviews from those who'd made the switch. Longer charge retention, more cranking power, cold-weather longevity and low weight were given as positives. Slightly increased prices and a brief warm-up time the only negatives (it's advised to let the battery run briefly with low draw, such as from headlights, before a very cold start). I've been impressed with Lithium technology in almost every other device I own, so decided to give it a try.</p>
+<p><img alt="" src="https://lifeintimelapse.github.io/images/a/b/c/a/d/abcada645b680904ee8ea61000bcefdd71b54016-img20200420002301.jpeg" srcset="https://lifeintimelapse.github.io/images/e/f/4/e/2/ef4e28261aa7922ee5d1bb04459dc0ec34b51964-img202004200023012x.jpeg 1000w, https://lifeintimelapse.github.io/images/7/9/b/4/2/79b42355086f1348e3e41a9ab41ec313ac35eacd-img202004200023013x.jpeg 1500w, https://lifeintimelapse.github.io/images/4/6/2/0/6/46206660f609f5663cca591dd9d8d3db264c7f8c-img202004200023014x.jpeg 2500w, https://lifeintimelapse.github.io/images/6/f/6/4/f/6f64f7f80f1d8b225ae833bfa1137b46acd120b7-img202004200023015x.jpeg 3500w, https://lifeintimelapse.github.io/images/3/6/d/9/b/36d9bb2acaf96c094c697fba1650693a48317b04-img202004200023016x.jpeg 5312w, https://lifeintimelapse.github.io/images/a/b/c/a/d/abcada645b680904ee8ea61000bcefdd71b54016-img20200420002301.jpeg 640w" sizes="100vw">
+<img alt="" src="https://lifeintimelapse.github.io/images/2/c/3/1/1/2c3110acb906021a9f4c39e1a0781065d45d7e04-20200418-201242.jpeg" srcset="https://lifeintimelapse.github.io/images/6/7/2/3/f/6723f2cc9771b01db92c8844d64e44f2af66d077-20200418-2012422x.jpeg 1000w, https://lifeintimelapse.github.io/images/e/2/2/8/5/e22854ab529aacca4741aa681bfa8882719a9b9f-20200418-2012423x.jpeg 1500w, https://lifeintimelapse.github.io/images/9/3/9/b/4/939b4d613e25f07756f54df55483bc10474fe0d5-20200418-2012424x.jpeg 2500w, https://lifeintimelapse.github.io/images/f/d/9/e/0/fd9e04a1243061fd6cf3e34e7be170a1a58ff1f2-20200418-2012425x.jpeg 3500w, https://lifeintimelapse.github.io/images/1/c/8/8/b/1c88b6efc26497c067b5658ea6aa3a4dc098e48b-20200418-2012426x.jpeg 5312w, https://lifeintimelapse.github.io/images/2/c/3/1/1/2c3110acb906021a9f4c39e1a0781065d45d7e04-20200418-201242.jpeg 640w" sizes="100vw"></p>
+<p>It's early days but so far I'm impressed. The battery is <em>much</em> smaller and lighter than the OEM original. Cranking power certainly seems very strong, although with the old battery having been on the way out for some time it's hard to say how this would compare to a new lead-acid model. I think there may also be some other positives that I hadn't expected. As batteries degrade they have a tendency to never reach full charge and exert a constant draw and this may have been affecting other components. Both the phone charger and fan on the bike seem more effective since the installation (my phone had been slowly dropping charge on rides even when plugged).</p>
+<p>Before ordering the new battery I checked to see if my existing battery tender could be used to charge a lithium battery. I'm glad I did, because apparently a tender for a lead-acid battery will likely damage a lithium model. I assumed that ordering a lithium tender from the same company, Optimate, would mean that I could use my existing hella/DIN adapter. Irritatingly this was not the case, as they have updated the design. </p>
+<figure class="image-caption"><img title="Lead-acid and lithium Optimate battery tenders side-by-side" alt="" class="caption" src="https://lifeintimelapse.github.io/images/0/3/5/8/7/035872438a9eb798b9e1b13b30b6d16c82664abf-20200421-201019v1.jpeg" srcset="https://lifeintimelapse.github.io/images/e/0/4/1/e/e041ecd38c5f9fefb2dc5dbbd8a5f8e96f2e06a1-20200421-201019v12x.jpeg 1000w, https://lifeintimelapse.github.io/images/4/6/7/b/b/467bb663d29778c590eb84bf032a53d3aaadba71-20200421-201019v13x.jpeg 1500w, https://lifeintimelapse.github.io/images/4/2/a/c/d/42acdd1658c21655879857eff75b84f165fa4846-20200421-201019v14x.jpeg 2500w, https://lifeintimelapse.github.io/images/b/e/7/2/7/be727fa44b3819060c0c8422798097f0aa5d1134-20200421-201019v15x.jpeg 3500w, https://lifeintimelapse.github.io/images/0/5/d/1/5/05d155861ef973a5b72acb7fd501500fde18c2e2-20200421-201019v16x.jpeg 4269w, https://lifeintimelapse.github.io/images/0/3/5/8/7/035872438a9eb798b9e1b13b30b6d16c82664abf-20200421-201019v1.jpeg 640w" sizes="100vw"><figcaption class="">Lead-acid and lithium Optimate battery tenders side-by-side</figcaption></figure>
+<p>There is a plus though, with two I can now charge the car and bike batteries at the same time.</p>
+<p><img alt="" src="https://lifeintimelapse.github.io/images/e/8/7/1/f/e871f3b4a73411dd38ed9ab4d2d889ddd57204ed-img20200428205547.jpeg" srcset="https://lifeintimelapse.github.io/images/d/2/0/7/a/d207a0c2aa50eb93102f5ef72115a73704ba6dfd-img202004282055472x.jpeg 1000w, https://lifeintimelapse.github.io/images/5/3/6/9/5/536959622ff3971bc34518439918430f9d2df264-img202004282055473x.jpeg 1500w, https://lifeintimelapse.github.io/images/6/d/9/3/8/6d93805d546d22c6f244be2bdd357a602bce0470-img202004282055474x.jpeg 2500w, https://lifeintimelapse.github.io/images/d/6/8/b/0/d68b0401ee1e12f0b1b166cb49730b3aeabec7ef-img202004282055475x.jpeg 2988w, https://lifeintimelapse.github.io/images/e/8/7/1/f/e871f3b4a73411dd38ed9ab4d2d889ddd57204ed-img20200428205547.jpeg 640w" sizes="100vw"></p>
+                ]]>
+            </description>
+            <category>motorcycling</category>
+            <guid>https://lifeintimelapse.github.io/all-in-on-lithium</guid>
+            <pubDate>Tue, 04 Feb 2020 19:42:00 +0000</pubDate>
+        </item>
+                        <item>
+            <title>Linux Home Theatre</title>
+            <link>https://lifeintimelapse.github.io/linux-home-theatre</link>
+            <description>
+                <![CDATA[
+                                <img alt="" src="https://lifeintimelapse.github.io/images/3/6/d/8/c/36d8cbcdf4cefba0944d64d440dd23273ad92956-screenshot20200420194433.png" srcset="https://lifeintimelapse.github.io/images/b/5/e/6/b/b5e6b23658b24d5b46bcc580ca55799c630c3e7a-screenshot202004201944332x.png 1000w, https://lifeintimelapse.github.io/images/8/b/f/2/a/8bf2a02cb63d7ac3fa1dd4775647c8090a9cf360-screenshot202004201944333x.png 1500w, https://lifeintimelapse.github.io/images/b/7/7/e/0/b77e06ee7860dbf50b38517dbeaa3852c128aad0-screenshot202004201944334x.png 1836w, https://lifeintimelapse.github.io/images/3/6/d/8/c/36d8cbcdf4cefba0944d64d440dd23273ad92956-screenshot20200420194433.png 640w" sizes="100vw" />
+                                <p>I first built a Linux home theatre PC around 2005 and I've had one ever since. At first I used MythTV and it was all about recording and transcoding OTS (over-the-air) broadcasts, in the days before online streaming services had caught on (and way before offline downloads). These days that's still a part of it, but having a powerful PC in the living room offers so much more now.</p>
+<h3>Hardware</h3>
+<p>From a hardware perspective it's never been easier. I've been through a couple of full-sized ATX chassis and battled with noisy drives and PSU fans. Today I have a small fanless core i3 NUC with a fast internal SSD for the OS (Ubuntu LTS). Beside the NUC in an external enclosure is a large hard disk used for media cache storage. The whole setup is small, quiet and relatively cheap with acceptable performance. A USB twin-tuner provides OTA broadcasts. In the increasingly unlikely event that I need an optical drive, I can plug in a USB unit. This all sits in a cabinet under the television, connected to the TV by HDMI and wired to a gigabit switch.</p>
+<p><img alt="" src="https://lifeintimelapse.github.io/images/7/7/8/2/f/7782fef6f66171848add857f5502c531dc4e4619-20200420-230209v1.jpeg" srcset="https://lifeintimelapse.github.io/images/d/0/b/f/1/d0bf18b16c6c30309c967f822b0499bdf00150d8-20200420-230209v12x.jpeg 1000w, https://lifeintimelapse.github.io/images/e/9/b/2/6/e9b26806f96d38dc5a0ce40a8d61243d0118df59-20200420-230209v13x.jpeg 1500w, https://lifeintimelapse.github.io/images/9/f/4/a/f/9f4af2c982c30ec6c72074ee5a84038ac5aeb914-20200420-230209v14x.jpeg 2500w, https://lifeintimelapse.github.io/images/6/9/c/b/e/69cbe1a5b193521abdd91bf3da8984d32efc73aa-20200420-230209v15x.jpeg 2988w, https://lifeintimelapse.github.io/images/7/7/8/2/f/7782fef6f66171848add857f5502c531dc4e4619-20200420-230209v1.jpeg 640w" sizes="100vw"></p>
+<p>Although consumer drives tend to die quickly when used like this I'm not really worried about resilience here. I have a stack of retired disks from old builds that I no longer need, so this is a good way to use them up. When a disk eventually goes after a couple of years, I bin it and plug another. It's just TV shows after all - if there's something I want to keep long-term I back it up to the NAS. </p>
+<h3>Software</h3>
+<p>On the software side I've moved from a MythTV backend to TVHeadend. On clients (including the main box) I use Kodi as a frontend. MythTV was great in it's day, but breaking changes with most releases and the need for a consistent version on each client really tainted the experience. Development now seems to have stagnated. When I switched to TVHeadend and Kodi a few years back it was a revelation, they are much easier to setup and very low maintenance.</p>
+<h3>Rationale</h3>
+<p>The obvious question is why do this? Smart TVs are becoming the norm, set-top boxes are cheap and both these options can provide FreeView and/or streaming services. Why on earth bother with an HTPC? Well, I have a reasonably current smart TV and I've acquired a few set-top boxes (sometimes it takes a while before new services are available on Linux). These are my reasons - off-the-shelf appliances may answer some of these, but I've yet to find one that covers everything:</p>
+<ol><li>
+<strong>Live OTA (over-the-air) TV anywhere</strong> 
+<ul><li>Transcode and stream live over-the-air Freeview TV to any computer or mobile device in the house.</li>
+<li>Pause and record live OTA TV. My system has a dual tuner that allows me to watch or record two channels concurrently.</li>
+<li>Watch abroad. I can log in through my VPN and catch a Rugby match.
+<img alt="" src="https://lifeintimelapse.github.io/images/4/e/b/d/6/4ebd68dc601e08546f1ccf6d1c49d0356f8fb97a-screenshot20200420194336.png" srcset="https://lifeintimelapse.github.io/images/6/6/5/9/3/66593cc2a879945ab0b02961b36c68bc7b8d3d89-screenshot202004201943362x.png 1000w, https://lifeintimelapse.github.io/images/2/2/0/b/6/220b6990576defe8cad318686e0636c49519edc0-screenshot202004201943363x.png 1500w, https://lifeintimelapse.github.io/images/3/c/0/a/a/3c0aaff3615ebf97f7457b88e2cf9e7ae33813b8-screenshot202004201943364x.png 1836w, https://lifeintimelapse.github.io/images/4/e/b/d/6/4ebd68dc601e08546f1ccf6d1c49d0356f8fb97a-screenshot20200420194336.png 640w" sizes="100vw"><img alt="" src="https://lifeintimelapse.github.io/images/4/1/9/1/f/4191fd30820346ef332494b679f8084931293b45-screenshot20200420194550.png" srcset="https://lifeintimelapse.github.io/images/5/f/1/0/4/5f104303eb916f8cd294f3fa88521e9a6f94f737-screenshot202004201945502x.png 1000w, https://lifeintimelapse.github.io/images/7/9/7/3/c/7973c0b0ec40321d8968624d3e43d4a8533d1bd8-screenshot202004201945503x.png 1500w, https://lifeintimelapse.github.io/images/5/b/c/7/3/5bc730e4cc60dfc0d16978231440136972b5b188-screenshot202004201945504x.png 1836w, https://lifeintimelapse.github.io/images/4/1/9/1/f/4191fd30820346ef332494b679f8084931293b45-screenshot20200420194550.png 640w" sizes="100vw"></li>
+</ul></li>
+<li>
+<strong>Streaming services</strong> Amazon, Netflix, BBC iPlayer, ITV Hub, Sky...</li></ol>
+                ]]>
+            </description>
+            <category>smarthome,it</category>
+            <guid>https://lifeintimelapse.github.io/linux-home-theatre</guid>
+            <pubDate>Sun, 19 Jan 2020 00:19:00 +0000</pubDate>
+        </item>
+                        <item>
+            <title>The Last Step To Paperless</title>
+            <link>https://lifeintimelapse.github.io/the-last-step-to-paperless</link>
+            <description>
+                <![CDATA[
+                                <img alt="" src="https://lifeintimelapse.github.io/images/7/6/7/5/d/7675d6d5ccf20f580205465aa30601565bff3ecf-20200418-150211v1.jpeg" srcset="https://lifeintimelapse.github.io/images/f/7/7/1/8/f771836727e3f58fa2ce02469e65c1c02314f20a-20200418-150211v12x.jpeg 1000w, https://lifeintimelapse.github.io/images/3/7/3/0/8/37308282a2162c219b17f314dca0d6dce0c50790-20200418-150211v13x.jpeg 1500w, https://lifeintimelapse.github.io/images/7/a/8/8/e/7a88e168591488f36da89f0ee475691a096e1676-20200418-150211v14x.jpeg 2500w, https://lifeintimelapse.github.io/images/9/c/1/a/c/9c1ac3b1c087eb69b7d6b44a56d6501ab22d97e7-20200418-150211v15x.jpeg 3500w, https://lifeintimelapse.github.io/images/6/0/b/3/3/60b336b8b98940a729ce24a961c5dfae74e3ec42-20200418-150211v16x.jpeg 3812w, https://lifeintimelapse.github.io/images/7/6/7/5/d/7675d6d5ccf20f580205465aa30601565bff3ecf-20200418-150211v1.jpeg 640w" sizes="100vw" />
+                                <p>I've been keeping a digital notebook in <a href="https://www.evernote.com/">Evernote</a> for quite a few years now. It's a great tool for archiving knowledge that you need to retain long-term. It's become my personal wiki of experience and clipped web pages. Despite this I've carried on making paper notes for calls and meetings. There are two reasons:</p>
+<ol><li>It's more natural and less distracting. Typed notes don't offer the same speed and flexibility of handwriting and drawing. I want to jot down my thoughts without having to think about styling, page layout or switching between typing and drawing. With a pen these things are intuitive.</li>
+<li>I don't want to be <em>that</em> guy in the conference room, the one hammering away on a keyboard like a drummer in a rock band, while others are speaking or trying to listen.</li>
+</ol><p>However I often take calls away from my desk and need to refer to/update my handwritten notes but don't have them with me. Or I want to catch up with work on the go, but the meeting notes are at home. What I really wanted was to combine my two sets of notes, the handwritten and digital, with the advantages of both.</p>
+<p>As discussed in <a href="https://lifeintimelapse.github.io/python-udev-rules">an earlier post</a> I have a digital drawing tablet on my work desk. My laptop has a digitizer built into the screen. I also have a number of capactive styli that work with my Android phone and iPad (I wouldn't want to write an essay with them but they're fine for jotting down notes during an impromptu call). So in terms of kit I have everything I need to combine my digital and handwritten notes into one. All I need is a digital handwriting workflow.</p>
+<p><img alt="" src="https://lifeintimelapse.github.io/images/9/4/1/9/d/9419df6903eac84580f68fb9c1bd773acfd7b30d-20200418-150211v1.jpeg" srcset="https://lifeintimelapse.github.io/images/4/0/2/f/a/402faf904e98b2b77727229520b0627b21a57dd7-20200418-150211v12x.jpeg 1000w, https://lifeintimelapse.github.io/images/8/0/4/2/c/8042cc90d8dd300860df054d1ac526bf1c1d0794-20200418-150211v13x.jpeg 1500w, https://lifeintimelapse.github.io/images/7/d/5/1/9/7d519ca5f2d69d8b0aa688392af289cfb259274c-20200418-150211v14x.jpeg 2500w, https://lifeintimelapse.github.io/images/3/b/2/3/7/3b2379011f2f80ac82d3d835ed3a6f566a60c6fd-20200418-150211v15x.jpeg 3500w, https://lifeintimelapse.github.io/images/2/8/2/c/d/282cd1214ef4b89fe150922b8f81a7cb3f36b0c2-20200418-150211v16x.jpeg 3812w, https://lifeintimelapse.github.io/images/9/4/1/9/d/9419df6903eac84580f68fb9c1bd773acfd7b30d-20200418-150211v1.jpeg 640w" sizes="100vw"></p>
+<p>I want to use the best tool I have at any given time; my tablet when at my computer, my iPad in meetings or my phone if that is the only device with me. I began by taking notes in the best app I could find for each platform and then importing the notes as images into Evernote. Evernote has support for handwriting or drawing in each of it's apps (desktop, Android, iOS) but for some unknown reason the devs have taken a different approach on each platform and each has its own deficiencies, so I dismissed writing notes in Evernote directly.</p>
+<p>On the desktop I used <a href="https://unruhschuh.github.io/MrWriter/">MrWriter</a>, on Android <a href="https://play.google.com/store/apps/details?id=com.steadfastinnovation.android.projectpapyrus">Squid</a> and on iOS the default <a href="https://support.apple.com/en-gb/HT205773">Apple Notes App</a>. This works rather well, they all have similar tools and interfaces. So it's been a good approach but for the import of the notes into Evernote. It's just an additional step that makes the process feel a bit clunky. On mobile the notes have to be exported to Evernote, on desktop copy/pasted. The process has to be repeated in reverse to edit the note again.</p>
+<p><img alt="" src="https://lifeintimelapse.github.io/user/pages/01.blog/63.the-last-step-to-paperless/mrwriter.gif?fixOrientation"><img alt="" src="https://lifeintimelapse.github.io/user/pages/01.blog/63.the-last-step-to-paperless/squid.gif?fixOrientation"><img alt="" src="https://lifeintimelapse.github.io/user/pages/01.blog/63.the-last-step-to-paperless/iosNotes.gif?fixOrientation"></p>
+<p>More recently I have rediscovered <a href="https://www.onenote.com">OneNote</a>, which for me is close to optimal. It combines handwritten note taking with cloud storage and good tools for typed notes. Being a...</p>
+                ]]>
+            </description>
+            <category>IT</category>
+            <guid>https://lifeintimelapse.github.io/the-last-step-to-paperless</guid>
+            <pubDate>Sun, 05 Jan 2020 15:58:00 +0000</pubDate>
+        </item>
+            </channel>
+</rss>
